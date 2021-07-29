@@ -27,4 +27,3 @@ ALTER TABLE `users`
 --
 ALTER TABLE `users`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
