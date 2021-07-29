@@ -3,7 +3,7 @@
 define("WEBSITE_TITLE", 'CHEMIKAL DRINKS');
 
 //database name
-define('DB_NAME', "chemikal_db");
+define('DB_NAME', "enforma_db");
 define('DB_USER', "root");
 define('DB_PASS', "");
 define('DB_TYPE', "mysql");
