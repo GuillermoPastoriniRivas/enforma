@@ -1,4 +1,6 @@
-CREATE DATABASE IF NOT EXISTS enforma;
+--
+-- Base de datos: `enforma_db`
+--
 
 
 CREATE TABLE `users` (
