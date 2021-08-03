@@ -6,11 +6,11 @@ Class Suplementos extends Controller
 	public function index()
 	{
         $Suplementos = $this->load_model('Suplemento');
-        // var_dump($Suplementos->get_suplementos());
-        // exit;
+        
 
 		$data = [];
         $data['title'] = 'Suplementos';
+        $data['suplementos'] = $Suplementos->get_suplementos();
 		$this->view("suplementos",$data);
 	}
 

@@ -14,20 +14,20 @@
                 </div>
             </div>
             <div class="row">
-                <?php for($i=0; $i<12;$i++): ?>
+                <?php foreach($data['suplementos'] as $item): ?>
                     <div class="col-lg-4">
                         <div class="trainer-item">
                             <div class="image-thumb">
-                                <img src="<?= ASSETS . THEME ?>images/third-trainer.jpg" alt="">
+                                <img src="<?= ASSETS . THEME ?>images/<?= $item->imagen ?>" alt="">
                             </div>
                             <div class="down-content">
-                                <span>Strength Trainer</span>
-                                <h4>Bret D. Bowers</h4>
-                                <p>Bitters cliche tattooed 8-bit distillery mustache. Keytar succulents gluten-free vegan church-key pour-over seitan flannel.</p>
+                                <span><?= $item->precio ?></span>
+                                <h4><?= $item->titulo ?></h4>
+                                <p><?= $item->descripcion ?></p>
                             </div>
                         </div>
                     </div>
-                <?php endfor; ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
