@@ -14,7 +14,7 @@
                             </li>
                             <li class="scroll-to-section"><a href="<?=ROOT?>rutinas" 
                                 class="<?php if ($data['title']=='Rutinas'):?>active<?php endif;?>">Rutinas</a></li>
-                            <li class="scroll-to-section"><a href="#our-classes">Suplementos</a></li>
+                            <li class="scroll-to-section"><a href="<?=ROOT?>suplementos">Suplementos</a></li>
                             <li class="scroll-to-section"><a href="#schedule">Schedules</a></li>
                             <li class="scroll-to-section"><a href="<?=ROOT?>contacto"
                                 class="<?php if ($data['title']=='Contacto'):?>active<?php endif;?>">Contacto</a></li> 

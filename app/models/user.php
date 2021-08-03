@@ -14,7 +14,7 @@ Class User
 		$data['password'] 	= trim($POST['password']);
 		$password2 			= trim($POST['password2']);
 
-		if(empty($data['email']) || !preg_match("/^[0-9a-zA-Z_-]+@[a-zA-Z]+.[a-zA-Z]+$/", $data['email']))
+		if(empty($data['email']) || !preg_match("/^[0-9a-zA-Z_-.+s]+@[a-zA-Z]+.[a-zA-Z]+$/", $data['email']))
 		{
 			$this->error .= "Please enter a valid email <br>";
 		}

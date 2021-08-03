@@ -13,7 +13,7 @@ Class Admin extends Controller
 			$user = $this->load_model("User");
 			$user->login($_POST);
 		}
-
+		$data['title'] = 'Contacto';
 		$this->view("admin",$data);
 	}
 
