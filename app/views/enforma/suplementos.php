@@ -14,7 +14,6 @@
                 </div>
             </div>
             <div class="row">
-            <?php print_r($data['suplementos']);exit; ?>
                 <?php for($i=0; $i<12;$i++): ?>
                     <div class="col-lg-4">
                         <div class="trainer-item">
