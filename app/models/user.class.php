@@ -16,22 +16,22 @@ Class User
 
 		if(empty($data['email']) || !preg_match("/^[0-9a-zA-Z_-.+s]+@[a-zA-Z]+.[a-zA-Z]+$/", $data['email']))
 		{
-			$this->error .= "Please enter a valid email <br>";
+			$this->error .= "Por favor, ingresar un email valido <br>";
 		}
 
 		if(empty($data['name']) || !preg_match("/^[a-zA-Z]+$/", $data['name']))
 		{
-			$this->error .= "Please enter a valid name <br>";
+			$this->error .= "Por favor, ingresar un nombre valido <br>";
 		}
 
 		if($data['password'] !== $password2)
 		{
-			$this->error .= "Passwords do not match <br>";
+			$this->error .= "Las contraseñas no coinciden <br>";
 		}
 
 		if(strlen($data['password']) < 4)
 		{
-			$this->error .= "Password must be atleast 4 characters long <br>";
+			$this->error .= "La contraseña tiene que tener al menos 4 caracteres. <br>";
 		}
 
 		//check if email already exists
@@ -39,7 +39,7 @@ Class User
 		$arr['email'] = $data['email'];
 		$check = $db->read($sql,$arr);
 		if(is_array($check)){
-			$this->error .= "That email is already in use <br>";
+			$this->error .= "El email ya esta en uso <br>";
 		}
 
 		$data['url_address'] = $this->get_random_string_max(60);
@@ -86,12 +86,12 @@ Class User
  
 		if(empty($data['email']) || !preg_match("/^[0-9a-zA-Z_-]+@[a-zA-Z]+.[a-zA-Z]+$/", $data['email']))
 		{
-			$this->error .= "Please enter a valid email <br>";
+			$this->error .= "Por favor, ingresar un email valido <br>";
 		}
  
  		if(strlen($data['password']) < 4)
 		{
-			$this->error .= "Password must be atleast 4 characters long <br>";
+			$this->error .= "La contraseña tiene que tener al menos 4 caracteres. <br>";
 		}
 
   		if($this->error == ""){
@@ -109,7 +109,7 @@ Class User
 				die;
 			}
 
-			$this->error .= "Wrong email or password <br>";
+			$this->error .= "Email o contraseña incorrectos <br>";
 
 		}
 
