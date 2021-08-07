@@ -4,6 +4,6 @@
 	<title></title>
 </head>
 <body>
-This is the home page
+Esta es la pagina principal
 </body>
 </html>
