@@ -7,15 +7,15 @@
     <!-- ***** Main Banner Area Start ***** -->
     <div class="main-banner" id="top">
         <video autoplay muted loop id="bg-video">
-            <source src="<?= ASSETS . THEME ?>images/gym-video.mp4" type="video/mp4" />
+            <source src="<?= ASSETS . THEME ?>images/fondo.mp4" type="video/mp4" />
         </video>
 
         <div class="video-overlay header-text">
             <div class="caption">
                 <h6>Desde 1993</h6>
-                <h2>easy with our <em>gym</em></h2>
+                <h2>Cuidando tu <em>imágen</em></h2>
                 <div class="main-button scroll-to-section">
-                    <a href="#features">Become a member</a>
+                    <a href="#features">Inscribirse</a>
                 </div>
             </div>
         </div>
