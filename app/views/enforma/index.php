@@ -1,7 +1,7 @@
-<?php $this->view("header",$data); ?>
+<?php $this->view("partes/header",$data); ?>
     
     
-    <?php $this->view("navegacion",$data); ?>
+    <?php $this->view("partes/navegacion",$data); ?>
   
 
     <!-- ***** Main Banner Area Start ***** -->
@@ -195,7 +195,7 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
-                        <h2>Expert <em>Trainers</em></h2>
+                        <h2>Nuestros <em>Entrenadores</em></h2>
                         <img src="<?= ASSETS . THEME ?>images/line-dec.png" alt="">
                         <p></p>
                     </div>
@@ -308,4 +308,4 @@
     </section>
     <!-- ***** Contact Us Area Ends ***** -->
     
-<?php $this->view("footer",$data); ?>
+<?php $this->view("partes/footer",$data); ?>

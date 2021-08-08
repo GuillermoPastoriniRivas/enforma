@@ -1,6 +1,6 @@
-<?php $this->view("header",$data); ?>
+<?php $this->view("partes/header",$data); ?>
 
-<?php $this->view("navegacion",$data); ?>
+<?php $this->view("partes/navegacion",$data); ?>
   <!-- ***** Testimonials Starts ***** -->
   <section class="section" id="trainers">
         <div class="container">
@@ -33,4 +33,4 @@
     </section>
     <!-- ***** Testimonials Ends ***** -->
 
-    <?php $this->view("footer",$data); ?>
+    <?php $this->view("partes/footer",$data); ?>

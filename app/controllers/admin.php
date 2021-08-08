@@ -5,15 +5,10 @@ Class Admin extends Controller
 
 	public function index()
 	{
-		$data['page_title'] = "Administracion";
-		
-		if($_SERVER['REQUEST_METHOD'] == "POST")
-		{
- 			
-			$user = $this->load_model("User");
-			$user->login($_POST);
-		}
-		$data['title'] = 'Contacto';
+		$Suplementos = $this->load_model('Suplemento');
+		$data = [];
+        $data['title'] = 'Admin';
+        $data['suplementos'] = $Suplementos->get_suplementos();
 		$this->view("admin",$data);
 	}
 

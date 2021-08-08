@@ -1,7 +1,7 @@
-<?php $this->view("header",$data); ?>
+<?php $this->view("partes/header",$data); ?>
 
 
-    <?php $this->view("navegacion",$data); ?>
+    <?php $this->view("partes/navegacion",$data); ?>
   
     <!-- ***** Our Classes Start ***** -->
     <section class="section" id="our-classes">
@@ -205,4 +205,4 @@
     
 
     
-<?php $this->view("footer",$data); ?>
+<?php $this->view("partes/footer",$data); ?>

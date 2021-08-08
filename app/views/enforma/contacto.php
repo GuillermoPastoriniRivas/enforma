@@ -1,6 +1,6 @@
-<?php $this->view("header",$data); ?>
+<?php $this->view("partes/header",$data); ?>
 
-    <?php $this->view("navegacion",$data); ?>
+    <?php $this->view("partes/navegacion",$data); ?>
   
 <section class="section contact_alone" id="contact-us">
         <div class="container-fluid">
@@ -47,4 +47,4 @@
         </div>
     </section>
 
-    <?php $this->view("footer",$data); ?>
+    <?php $this->view("partes/footer",$data); ?>

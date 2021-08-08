@@ -1,4 +1,4 @@
-<?php $this->view("header",$data); ?>
+<?php $this->view("partes/header",$data); ?>
 
 	<div class="container text-center">
 		<div class="logo-404">
@@ -12,4 +12,4 @@
 		</div>
 	</div>
 
-<?php $this->view("footer",$data); ?>
+<?php $this->view("partes/footer",$data); ?>
