@@ -139,7 +139,7 @@
                         <td><?=$key+1?></td>
                         <td><?= $item->titulo  ?></td>
                         <td><?= $item->descripcion  ?></td>
-                        <td><?= $item->imagen  ?></td>
+                        <td><img src="<?= ASSETS . THEME ?>images/<?= $item->imagen ?>" alt="" width="50"></td>
                         <td><?= $item->precio  ?></td>
                         <td class="td-actions text-left">
                               <button type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm">
