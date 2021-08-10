@@ -8,7 +8,7 @@
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
                         <h2>Suplementos <em>Deportivos</em></h2>
-                        <img src="<?= ASSETS . THEME ?>images/line-dec.png" alt="">
+                        <img src="<?= ASSETS . THEME ?>olasraras.png" alt="">
                         <p>Los suplementos deportivos son productos que se usan para mejorar el rendimiento deportivo que podrían incluir vitaminas, minerales, aminoácidos, hierbas, un extracto o combinación de estos.</p>
                     </div>
                 </div>

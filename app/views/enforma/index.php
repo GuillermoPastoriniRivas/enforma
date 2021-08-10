@@ -29,7 +29,7 @@
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
                         <h2>Elegir <em>Rutina</em></h2>
-                        <img src="<?= ASSETS . THEME ?>images/line-dec.png" alt="waves">
+                        <img src="<?= ASSETS . THEME ?>images/olasraras.png" alt="waves">
                         
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                     <ul class="features-items">
                         <li class="feature-item">
                             <div class="left-icon">
-                                <img src="<?= ASSETS . THEME ?>images/features-first-icon.png" alt="First One">
+                                <img src="<?= ASSETS . THEME ?>images/rojamancuerna.png" alt="First One">
                             </div>
                             <div class="right-content">
                                 <a href="#" class="text-button">Saber mas</a>
@@ -45,7 +45,7 @@
                         </li>
                         <li class="feature-item">
                             <div class="left-icon">
-                                <img src="<?= ASSETS . THEME ?>images/features-first-icon.png" alt="second one">
+                                <img src="<?= ASSETS . THEME ?>images/rojamancuerna.png" alt="second one">
                             </div>
                             <div class="right-content">
                               
@@ -54,7 +54,7 @@
                         </li>
                         <li class="feature-item">
                             <div class="left-icon">
-                                <img src="<?= ASSETS . THEME ?>images/features-first-icon.png" alt="third gym training">
+                                <img src="<?= ASSETS . THEME ?>images/rojamancuerna.png" alt="third gym training">
                             </div>
                             <div class="right-content">
                                 <a href="#" class="text-button">Saber mas</a>
@@ -66,7 +66,7 @@
                     <ul class="features-items">
                         <li class="feature-item">
                             <div class="left-icon">
-                                <img src="<?= ASSETS . THEME ?>images/features-first-icon.png" alt="fourth muscle">
+                                <img src="<?= ASSETS . THEME ?>images/rojamancuerna.png" alt="fourth muscle">
                             </div>
                             <div class="right-content">
                                 <a href="#" class="text-button">Saber mas</a>
@@ -74,7 +74,7 @@
                         </li>
                         <li class="feature-item">
                             <div class="left-icon">
-                                <img src="<?= ASSETS . THEME ?>images/features-first-icon.png" alt="training fifth">
+                                <img src="<?= ASSETS . THEME ?>images/rojamancuerna.png" alt="training fifth">
                             </div>
                             <div class="right-content">
                                 <a href="#" class="text-button">Saber mas</a>
@@ -82,7 +82,7 @@
                         </li>
                         <li class="feature-item">
                             <div class="left-icon">
-                                <img src="<?= ASSETS . THEME ?>images/features-first-icon.png" alt="gym training">
+                                <img src="<?= ASSETS . THEME ?>images/rojamancuerna.png" alt="gym training">
                             </div>
                             <div class="right-content">
                                 <a href="#" class="text-button">Saber mas</a>
