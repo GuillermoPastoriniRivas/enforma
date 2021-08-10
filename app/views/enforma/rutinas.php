@@ -3,7 +3,7 @@
 
     <?php $this->view("partes/navegacion",$data); ?>
   
-    <!-- ***** Our Classes Start ***** -->
+    <!-- ***** Our Classes Start ***** 
     <section class="section" id="our-classes">
         <div class="container">
             <div class="row">
@@ -64,7 +64,7 @@
             </div>
         </div>
     </section>
-    <!-- ***** Our Classes End ***** -->
+   ***** Our Classes End ***** 
     
     <section class="section" id="schedule">
         <div class="container">
@@ -131,7 +131,7 @@
         </div>
     </section>
 
-    <!-- ***** Testimonials Starts ***** -->
+    ***** Testimonials Starts ***** 
     <section class="section" id="trainers">
         <div class="container">
             <div class="row">
@@ -201,7 +201,7 @@
             </div>
         </div>
     </section>
-    <!-- ***** Testimonials Ends ***** -->
+     ***** Testimonials Ends ***** -->
     
 
     

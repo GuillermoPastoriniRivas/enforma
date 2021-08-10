@@ -28,9 +28,9 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
-                        <h2>Choose <em>Program</em></h2>
+                        <h2>Elegir <em>Rutina</em></h2>
                         <img src="<?= ASSETS . THEME ?>images/line-dec.png" alt="waves">
-                        <p>Training Studio is free CSS template for gyms and fitness centers. You are allowed to use this layout for your business website.</p>
+                        
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -40,9 +40,7 @@
                                 <img src="<?= ASSETS . THEME ?>images/features-first-icon.png" alt="First One">
                             </div>
                             <div class="right-content">
-                                <h4>Basic Fitness</h4>
-                                <p>Please do not re-distribute this template ZIP file on any template collection website. This is not allowed.</p>
-                                <a href="#" class="text-button">Discover More</a>
+                                <a href="#" class="text-button">Saber mas</a>
                             </div>
                         </li>
                         <li class="feature-item">
@@ -50,9 +48,8 @@
                                 <img src="<?= ASSETS . THEME ?>images/features-first-icon.png" alt="second one">
                             </div>
                             <div class="right-content">
-                                <h4>New Gym Training</h4>
-                                <p>If you wish to support TemplateMo website via PayPal, please feel free to contact us. We appreciate it a lot.</p>
-                                <a href="#" class="text-button">Discover More</a>
+                              
+                                <a href="#" class="text-button">Saber mas</a>
                             </div>
                         </li>
                         <li class="feature-item">
@@ -60,9 +57,7 @@
                                 <img src="<?= ASSETS . THEME ?>images/features-first-icon.png" alt="third gym training">
                             </div>
                             <div class="right-content">
-                                <h4>Basic Muscle Course</h4>
-                                <p>Credit goes to <a rel="nofollow" href="https://www.pexels.com" target="_blank">Pexels website</a> for images and video background used in this HTML template.</p>
-                                <a href="#" class="text-button">Discover More</a>
+                                <a href="#" class="text-button">Saber mas</a>
                             </div>
                         </li>
                     </ul>
@@ -74,9 +69,7 @@
                                 <img src="<?= ASSETS . THEME ?>images/features-first-icon.png" alt="fourth muscle">
                             </div>
                             <div class="right-content">
-                                <h4>Advanced Muscle Course</h4>
-                                <p>You may want to browse through <a rel="nofollow" href="https://templatemo.com/tag/digital-marketing" target="_parent">Digital Marketing</a> or <a href="https://templatemo.com/tag/corporate">Corporate</a> HTML CSS templates on our website.</p>
-                                <a href="#" class="text-button">Discover More</a>
+                                <a href="#" class="text-button">Saber mas</a>
                             </div>
                         </li>
                         <li class="feature-item">
@@ -84,9 +77,7 @@
                                 <img src="<?= ASSETS . THEME ?>images/features-first-icon.png" alt="training fifth">
                             </div>
                             <div class="right-content">
-                                <h4>Yoga Training</h4>
-                                <p>This template is built on Bootstrap v4.3.1 framework. It is easy to adapt the columns and sections.</p>
-                                <a href="#" class="text-button">Discover More</a>
+                                <a href="#" class="text-button">Saber mas</a>
                             </div>
                         </li>
                         <li class="feature-item">
@@ -94,9 +85,7 @@
                                 <img src="<?= ASSETS . THEME ?>images/features-first-icon.png" alt="gym training">
                             </div>
                             <div class="right-content">
-                                <h4>Body Building Course</h4>
-                                <p>Suspendisse fringilla et nisi et mattis. Curabitur sed finibus nisi. Integer nibh sapien, vehicula et auctor.</p>
-                                <a href="#" class="text-button">Discover More</a>
+                                <a href="#" class="text-button">Saber mas</a>
                             </div>
                         </li>
                     </ul>
@@ -112,10 +101,10 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="cta-content">
-                        <h2>Don’t <em>think</em>, begin <em>today</em>!</h2>
-                        <p>Ut consectetur, metus sit amet aliquet placerat, enim est ultricies ligula, sit amet dapibus odio augue eget libero. Morbi tempus mauris a nisi luctus imperdiet.</p>
+                        <h2>No <em>Lo</em> Pienses <em>Mas</em>, Inscribite <em>Ahora!</em>!</h2>
+                        <p></p>
                         <div class="main-button scroll-to-section">
-                            <a href="#our-classes">Become a member</a>
+                            <a href="#our-classes">Inscribirse</a>
                         </div>
                     </div>
                 </div>
@@ -130,54 +119,50 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
-                        <h2>Our <em>Classes</em></h2>
+                        <h2>Nuestras <em>Clases</em></h2>
                         <img src="<?= ASSETS . THEME ?>images/line-dec.png" alt="">
-                        <p>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor, ultricies fermentum massa consequat eu.</p>
+                        <p></p>
                     </div>
                 </div>
             </div>
             <div class="row" id="tabs">
               <div class="col-lg-4">
                 <ul>
-                  <li><a href='#tabs-1'><img src="<?= ASSETS . THEME ?>images/tabs-first-icon.png" alt="">First Training Class</a></li>
-                  <li><a href='#tabs-2'><img src="<?= ASSETS . THEME ?>images/tabs-first-icon.png" alt="">Second Training Class</a></a></li>
-                  <li><a href='#tabs-3'><img src="<?= ASSETS . THEME ?>images/tabs-first-icon.png" alt="">Third Training Class</a></a></li>
-                  <li><a href='#tabs-4'><img src="<?= ASSETS . THEME ?>images/tabs-first-icon.png" alt="">Fourth Training Class</a></a></li>
-                  <div class="main-rounded-button"><a href="#">View All Schedules</a></div>
+                  <li><a href='#tabs-1'><img src="<?= ASSETS . THEME ?>" alt="">clase1</a></li>
+                  <li><a href='#tabs-2'><img src="<?= ASSETS . THEME ?>" alt="">clase2</a></a></li>
+                  <li><a href='#tabs-3'><img src="<?= ASSETS . THEME ?>" alt="">clase3</a></a></li>
+                  <li><a href='#tabs-4'><img src="<?= ASSETS . THEME ?>" alt="">clase4</a></a></li>
+                  <div class="main-rounded-button"><a href="#"> Mirar Todos Los Horarios</a></div>
                 </ul>
               </div>
               <div class="col-lg-8">
                 <section class='tabs-content'>
                   <article id='tabs-1'>
                     <img src="<?= ASSETS . THEME ?>images/training-image-01.jpg" alt="First Class">
-                    <h4>First Training Class</h4>
-                    <p>Phasellus convallis mauris sed elementum vulputate. Donec posuere leo sed dui eleifend hendrerit. Sed suscipit suscipit erat, sed vehicula ligula. Aliquam ut sem fermentum sem tincidunt lacinia gravida aliquam nunc. Morbi quis erat imperdiet, molestie nunc ut, accumsan diam.</p>
+                    <h4>primer entrenamiento</h4>
                     <div class="main-button">
-                        <a href="#">View Schedule</a>
+                        <a href="#">Mirar Horarios</a>
                     </div>
                   </article>
                   <article id='tabs-2'>
                     <img src="<?= ASSETS . THEME ?>images/training-image-02.jpg" alt="Second Training">
-                    <h4>Second Training Class</h4>
-                    <p>Integer dapibus, est vel dapibus mattis, sem mauris luctus leo, ac pulvinar quam tortor a velit. Praesent ultrices erat ante, in ultricies augue ultricies faucibus. Nam tellus nibh, ullamcorper at mattis non, rhoncus sed massa. Cras quis pulvinar eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                    <h4>segundo entrenamiento</h4>
                     <div class="main-button">
-                        <a href="#">View Schedule</a>
+                        <a href="#">Mirar Horarios</a>
                     </div>
                   </article>
                   <article id='tabs-3'>
                     <img src="<?= ASSETS . THEME ?>images/training-image-03.jpg" alt="Third Class">
-                    <h4>Third Training Class</h4>
-                    <p>Fusce laoreet malesuada rhoncus. Donec ultricies diam tortor, id auctor neque posuere sit amet. Aliquam pharetra, augue vel cursus porta, nisi tortor vulputate sapien, id scelerisque felis magna id felis. Proin neque metus, pellentesque pharetra semper vel, accumsan a neque.</p>
+                    <h4>tercer entrenamiento</h4>
                     <div class="main-button">
-                        <a href="#">View Schedule</a>
+                        <a href="#">Mirar Horarios</a>
                     </div>
                   </article>
                   <article id='tabs-4'>
                     <img src="<?= ASSETS . THEME ?>images/training-image-04.jpg" alt="Fourth Training">
-                    <h4>Fourth Training Class</h4>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean ultrices elementum odio ac tempus. Etiam eleifend orci lectus, eget venenatis ipsum commodo et.</p>
+                    <h4>cuarto entrenamiento</h4>
                     <div class="main-button">
-                        <a href="#">View Schedule</a>
+                        <a href="#">Mirar Horarios</a>
                     </div>
                   </article>
                 </section>
@@ -190,6 +175,7 @@
     
 
     
+  <!-- ***** Call to Action End ***** 
     <section class="section" id="trainers">
         <div class="container">
             <div class="row">
@@ -259,9 +245,9 @@
             </div>
         </div>
     </section>
-    <!-- ***** Testimonials Ends ***** -->
+     ***** Testimonials Ends ***** -->
     
-    <!-- ***** Contact Us Area Starts ***** -->
+    <!-- ***** Contact Us Area Starts ***** 
     <section class="section" id="contact-us">
         <div class="container-fluid">
             <div class="row">
@@ -306,6 +292,6 @@
             </div>
         </div>
     </section>
-    <!-- ***** Contact Us Area Ends ***** -->
+     ***** Contact Us Area Ends ***** -->
     
 <?php $this->view("partes/footer",$data); ?>
