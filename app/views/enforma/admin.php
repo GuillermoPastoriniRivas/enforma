@@ -119,9 +119,13 @@
            
             <div class="col-12">
               <div class="card">
-                <div class="card-header card-header-warning">
+                <div class="card-header card-header-warning" style="position:relative">
                   <h4 class="card-title">Suplementos Deportivos</h4>
                   <p class="card-category">Última actualización 08/Ago/21</p>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarSuplemento"  
+                    style="position:absolute;top:10px;right:10px;">
+                    Agregar Nuevo
+                  </button>
                 </div>
                 <div class="card-body table-responsive">
                   <table class="table table-hover">
@@ -145,7 +149,7 @@
                               <button type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>
                               </button>
-                              <button type="button" rel="tooltip" title="Borrar" class="btn btn-danger btn-link btn-sm">
+                              <button type="button" rel="tooltip" title="Borrar" class="btn btn-danger btn-link btn-sm" onclick="eliminarSuplemento('<?= $item->id_suplementos ?>');">
                                 <i class="material-icons">close</i>
                               </button>
                         </td>
@@ -155,11 +159,70 @@
                   </table>
                 </div>
               </div>
-            </div>
+            </div class="col-12">
+            
+            <div>
+            <div>
           </div>
         </div>
       </div>
       
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="agregarSuplemento" tabindex="-1" role="dialog" aria-labelledby="agregarSuplementoLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border: none;">
+          <div class="modal-header"  style="color: #fff; background-color: #9124a3; border-color: #701c7e; border: none;">
+            <h5 class="modal-title " id="exampleModalLabel" style="font-weight: 500;">Agregar Suplemento</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="<?=ROOT?>admin/agregarSuplemento" method="POST">
+            <div class="modal-body">
+              
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Título</label>
+                      <input type="text" class="form-control" name="titulo" minlength="5" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Precio</label>
+                      <input type="number" class="form-control" min="1" name="precio" required>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Descripción del producto</label>
+                        <textarea class="form-control" rows="4" minlength="5" name="descripcion" required></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="imagenSuplemento">Imagen</label>
+                      <input type="file" class="form-control-file" name="imagen" id="imagenSuplemento" required>
+                    </div>
+                  </div>
+                </div>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Agregar Producto</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
   
@@ -207,6 +270,23 @@
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="<?= ASSETS . THEME ?>admin/demo/demo.js"></script>
   <script>
+
+    function eliminarSuplemento(id) {
+      console.log(id)
+      $.ajax({
+        url: "admin/eliminarSuplemento",
+        data: {id:id},
+        method:'POST',
+        success: function(res) {
+          location.reload();
+        },
+        error: function(error) {
+          console.log(error)
+        }
+      });
+    }
+
+
     $(document).ready(function() {
       $().ready(function() {
         $sidebar = $('.sidebar');
