@@ -28,11 +28,22 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
-                        <h2>Elegir <em>Rutina</em></h2>
-                        <img src="<?= ASSETS . THEME ?>images/olasraras.png" alt="waves">
+                        <h2>Sobre <em>Nosotros</em></h2>
                         
                     </div>
                 </div>
+                <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="section-heading">
+                        <img src="<?= ASSETS . THEME ?>olasraras.png" alt="">
+                        <p>Nuestras instalaciones le ofrece, para su mayor comodidad posible, un amplio horario, siendo este <b>Lunes a Viernes de 7hs a 22:30hs y Sábados de 9hs a 11:30hs, 16hs a 20hs.</b></p>
+                        <p>Contamos con 400m2, dedicados al trabajo integral de todo su cuerpo, teniendo así una variedad de más de 100 aparatos de distintos grupos musculares para su disposición.
+                            Poseemos instructores especializados en musculación para guiarlo en su objetivo, acompañados de distintas rutinas de trabajo en compensación de necesidad y tiempo.
+                        </p>
+                        <p>Contamos con <b>asesoramiento nutricional</b> para lograr de manera apropiada sus objetivos planeados.</p>
+                    </div>
+                </div>
+            </div>
                 <div class="col-lg-6">
                     <ul class="features-items">
                         <li class="feature-item">
@@ -119,11 +130,25 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
-                        <h2>Nuestras <em>Clases</em></h2>
+                        <h2>¿Por qué estar <em>En Forma</em>?</h2>
                         <img src="<?= ASSETS . THEME ?>images/line-dec.png" alt="">
                         <p></p>
                     </div>
                 </div>
+                <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="section-heading">
+                        <img src="<?= ASSETS . THEME ?>olasraras.png" alt="">
+                      <p><h5><b>Prevención de enfermedades: </b></h5>Mejoras de la presión areterial, se disminuye las posibilidades de varices, enfermedades como diabetes, sobrepeso y de tipo cardiovasculares</p>
+                     <br>
+                     <br>
+                      <p><h5><b>El cuidado de la apariencia física: </b></h5>Relacionada directamente con la elevación de nuestro nivel de autoestima</p>
+                     <br>
+                     <br>
+                      <p><h5><b>Combate el estrés: </b></h5>Del que parece imposible escapar en un mundo que nos somete a constantes y diversas presiones.</p>
+                    </div>
+                </div>
+            </div>
             </div>
             <div class="row" id="tabs">
               <div class="col-lg-4">
