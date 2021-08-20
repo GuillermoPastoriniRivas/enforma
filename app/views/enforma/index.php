@@ -29,13 +29,13 @@
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
                         <h2>Sobre <em>Nosotros</em></h2>
-                        
+                        <img src="<?= ASSETS . THEME ?>images/line-dec.png" alt="">
                     </div>
                 </div>
                 <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <div class="section-heading">
-                        <img src="<?= ASSETS . THEME ?>olasraras.png" alt="">
+                    <div class="section-heading" style='margin-top: 0'>
+                    
                         <p>Nuestras instalaciones le ofrece, para su mayor comodidad posible, un amplio horario, siendo este <b>Lunes a Viernes de 7hs a 22:30hs y Sábados de 9hs a 11:30hs, 16hs a 20hs.</b></p>
                         <p>Contamos con 400m2, dedicados al trabajo integral de todo su cuerpo, teniendo así una variedad de más de 100 aparatos de distintos grupos musculares para su disposición.
                             Poseemos instructores especializados en musculación para guiarlo en su objetivo, acompañados de distintas rutinas de trabajo en compensación de necesidad y tiempo.
@@ -137,7 +137,7 @@
                 </div>
                 <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <div class="section-heading">
+                    <div class="section-heading" style='margin-top: 0'>
                         <img src="<?= ASSETS . THEME ?>olasraras.png" alt="">
                       <p><h5><b>Prevención de enfermedades: </b></h5>Mejoras de la presión areterial, se disminuye las posibilidades de varices, enfermedades como diabetes, sobrepeso y de tipo cardiovasculares</p>
                      <br>
