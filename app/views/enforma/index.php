@@ -21,9 +21,57 @@
         </div>
     </div>
     <!-- ***** Main Banner Area End ***** -->
-
-    <!-- ***** Features Item Start ***** -->
     <section class="section" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-heading">
+                        <h2>Sobre <em>Nosotros</em></h2>
+                         <img src="<?= ASSETS . THEME ?>images/line-dec.png" alt="">
+                        
+                    </div>
+                </div>
+                <div class="col-lg-8" style="margin:0 auto";>
+                    <ul class="features-items">
+                        <li class="feature-item">
+                            <div class="left-icon">
+                                <img src="<?= ASSETS . THEME ?>images/rojamancuerna.png" alt="First One">
+                            </div>
+                            <div class="right-content">
+                                <h4>Horarios</h4>
+                                <p>Nuestras instalaciones le ofrece, para su mayor comodidad posible, un amplio horario, siendo este <b>Lunes a Viernes de 7hs a 22:30hs y Sábados de 9hs a 11:30hs, 16hs a 20hs.</b></p>
+                               
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="left-icon">
+                               <img src="<?= ASSETS . THEME ?>images/rojamancuerna.png" alt="First One">
+                            </div>
+                            <div class="right-content">
+                                <h4>Instalaciones</h4>
+                                <p>Contamos con 400m2, dedicados al trabajo integral su cuerpo, y más de 100 aparatos de distintos grupos musculares para su disposición. 
+                        </p>
+                               
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="left-icon">
+                              <img src="<?= ASSETS . THEME ?>images/rojamancuerna.png" alt="First One">
+                            </div>
+                            <div class="right-content">
+                                <h4>Profesores</h4>
+                                <p>Contamos con <b>asesoramiento nutricional</b> para lograr sus objetivos planeados.Poseemos instructores especializados en musculación para guiarlo, acompañados de distintas rutinas en compensación de necesidad y tiempo.</p>
+                              
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Item Start ***** -->
+    <!-- <section class="section" id="features">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
@@ -103,7 +151,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- ***** Features Item End ***** -->
 
     <!-- ***** Call to Action Start ***** -->
@@ -135,60 +183,41 @@
                         <p></p>
                     </div>
                 </div>
-                <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="section-heading" style='margin-top: 0'>
-                        <img src="<?= ASSETS . THEME ?>olasraras.png" alt="">
-                      <p><h5><b>Prevención de enfermedades: </b></h5>Mejoras de la presión areterial, se disminuye las posibilidades de varices, enfermedades como diabetes, sobrepeso y de tipo cardiovasculares</p>
-                     <br>
-                     <br>
-                      <p><h5><b>El cuidado de la apariencia física: </b></h5>Relacionada directamente con la elevación de nuestro nivel de autoestima</p>
-                     <br>
-                     <br>
-                      <p><h5><b>Combate el estrés: </b></h5>Del que parece imposible escapar en un mundo que nos somete a constantes y diversas presiones.</p>
-                    </div>
-                </div>
-            </div>
-            </div>
+               
             <div class="row" id="tabs">
               <div class="col-lg-4">
                 <ul>
-                  <li><a href='#tabs-1'><img src="<?= ASSETS . THEME ?>" alt="">clase1</a></li>
-                  <li><a href='#tabs-2'><img src="<?= ASSETS . THEME ?>" alt="">clase2</a></a></li>
-                  <li><a href='#tabs-3'><img src="<?= ASSETS . THEME ?>" alt="">clase3</a></a></li>
-                  <li><a href='#tabs-4'><img src="<?= ASSETS . THEME ?>" alt="">clase4</a></a></li>
-                  <div class="main-rounded-button"><a href="#"> Mirar Todos Los Horarios</a></div>
+                  <li><a href='#tabs-1'><img src="<?= ASSETS . THEME ?>" alt="">Prevención de enfermedades</a></li>
+                  <li><a href='#tabs-2'><img src="<?= ASSETS . THEME ?>" alt="">El cuidado de la apariencia física</a></a></li>
+                  <li><a href='#tabs-3'><img src="<?= ASSETS . THEME ?>" alt="">Combate el estrés</a></a></li>
+                
                 </ul>
               </div>
               <div class="col-lg-8">
                 <section class='tabs-content'>
                   <article id='tabs-1'>
                     <img src="<?= ASSETS . THEME ?>images/training-image-01.jpg" alt="First Class">
-                    <h4>primer entrenamiento</h4>
-                    <div class="main-button">
-                        <a href="#">Mirar Horarios</a>
+                    <h4>Prevención de enfermedades</h4>
+                        <p>Mejoras de la presión areterial, se disminuye las posibilidades de varices, enfermedades como diabetes, sobrepeso y de tipo cardiovasculares</p>
+                    <div >
+                      
                     </div>
                   </article>
                   <article id='tabs-2'>
                     <img src="<?= ASSETS . THEME ?>images/training-image-02.jpg" alt="Second Training">
-                    <h4>segundo entrenamiento</h4>
-                    <div class="main-button">
-                        <a href="#">Mirar Horarios</a>
+                    <h4>El cuidado de la apariencia física</h4>
+                    <p>Relacionada directamente con la elevación de nuestro nivel de autoestima</p>
+                    <div >
+                        
                     </div>
                   </article>
                   <article id='tabs-3'>
                     <img src="<?= ASSETS . THEME ?>images/training-image-03.jpg" alt="Third Class">
-                    <h4>tercer entrenamiento</h4>
-                    <div class="main-button">
-                        <a href="#">Mirar Horarios</a>
-                    </div>
-                  </article>
-                  <article id='tabs-4'>
-                    <img src="<?= ASSETS . THEME ?>images/training-image-04.jpg" alt="Fourth Training">
-                    <h4>cuarto entrenamiento</h4>
-                    <div class="main-button">
-                        <a href="#">Mirar Horarios</a>
-                    </div>
+                    <h4>Combate el estrés</h4>
+                    <p>Del que parece imposible escapar en un mundo que nos somete a constantes y diversas presiones.</p>
+                    <div>
+
+                    </div>     
                   </article>
                 </section>
               </div>

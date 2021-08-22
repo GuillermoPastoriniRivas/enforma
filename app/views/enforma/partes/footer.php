@@ -2,7 +2,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; 2021 | Enforma Gim</p>
+                    <p>Copyright &copy; 2021 | Enforma Gim  <img src="<?= ASSETS . THEME ?>images/logo.png" alt="BCT" style="width:30px; float:right"></p>
+            
                 </div>
             </div>
         </div>
