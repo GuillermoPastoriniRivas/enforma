@@ -3,10 +3,6 @@
 Class Database
 {
 
-	/*
-	*
-	* This is the database class
-	*/
 	public static $con;
 
 	public function __construct()
@@ -38,9 +34,7 @@ Class Database
  	}
 
 
-	/*
-	* read from database
-	*/
+	
 	public function read($query,$data = array())
 	{
 
@@ -58,9 +52,7 @@ Class Database
 		return false;
 	}
 
-	/*
-	* write to database
-	*/
+
 	public function write($query,$data = array())
 	{
 

@@ -2,7 +2,6 @@
 
 define("WEBSITE_TITLE", 'CHEMIKAL DRINKS');
 
-//database name
 define('DB_NAME', "mysql");
 define('DB_USER', "envios");
 define('DB_PASS', "Ent3r4t3k2020!");
