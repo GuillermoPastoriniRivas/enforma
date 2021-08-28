@@ -34,7 +34,6 @@ Class User
 			$this->error .= "La contraseña tiene que tener al menos 4 caracteres. <br>";
 		}
 
-		//check if email already exists
 		$sql = "select * from users where email = :email limit 1";
 		$arr['email'] = $data['email'];
 		$check = $db->read($sql,$arr);
@@ -44,7 +43,6 @@ Class User
 
 		$data['url_address'] = $this->get_random_string_max(60);
 
-		//check for url_address
 		$arr = false;
 		$sql = "select * from users where url_address = :url_address limit 1";
 		$arr['url_address'] = $data['url_address'];
@@ -55,7 +53,7 @@ Class User
 		}
 
 		if($this->error == ""){
-			//save
+			
 			$data['rank'] = "customer";
 			$data['date'] = date("Y-m-d H:i:s");
 			$data['password'] = hash('sha1',$data['password']);
@@ -96,10 +94,9 @@ Class User
 
   		if($this->error == ""){
 
-			//comfirm
+		
  			$data['password'] = hash('sha1',$data['password']);
 
-			//check if email already exists
 			$sql = "select * from users where email = :email && password = :password limit 1";
  			$result = $db->read($sql,$data);
 			if(is_array($result)){
