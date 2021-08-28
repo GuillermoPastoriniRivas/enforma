@@ -3,11 +3,11 @@
 define("WEBSITE_TITLE", 'CHEMIKAL DRINKS');
 
 //database name
-define('DB_NAME', "mysql");
-define('DB_USER', "envios");
-define('DB_PASS', "Ent3r4t3k2020!");
+define('DB_NAME', "enforma_db");
+define('DB_USER', "lospibesdelits");
+define('DB_PASS', "lospibesdelits");
 define('DB_TYPE', "mysql");
-define('DB_HOST', "74.208.90.104");
+define('DB_HOST', "201.213.235.57");
 
 define('THEME','enforma/');
 
