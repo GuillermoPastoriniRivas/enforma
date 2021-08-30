@@ -1,22 +1,36 @@
-<?php 
+<?php $this->view("partes/header",$data); ?>
 
-Class Rutinas extends Controller
-{
+<?php $this->view("partes/navegacion",$data); ?>
+ 
+  <section class="section" id="trainers">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-heading">
+                        <h2>Rutinas <em>Deportivas</em></h2>
+                        <img src="<?= ASSETS . THEME ?>olasraras.png" alt="">
+                        <p>Escoge tu rutina</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <?php foreach($data['rutinas'] as $item): ?>
+                    <div class="col-lg-4">
+                        <div class="trainer-item">
+                            <div class="image-thumb">
+                                <img src="<?= ASSETS . THEME ?>images/<?= $item->imagen ?>" alt="">
+                            </div>
+                            <div class="down-content">
+                                <span><?= $item->dificultad ?></span>
+                                <h4><?= $item->titulo ?></h4>
+                                <p><?= $item->descripcion ?></p>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+   
 
-	public function index()
-	{
-		
-		
-		$User = $this->load_model('User');
-		$user_data = $User->check_login();
-
-		if(is_object($user_data)){
-			$data['user_data'] = $user_data;
-		}
-		$data = [];
-        $data['title'] = 'Rutinas';
-		$this->view("rutinas",$data);
-	}
-
-
-}
+    <?php $this->view("partes/footer",$data); ?>
