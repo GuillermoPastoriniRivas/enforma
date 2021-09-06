@@ -1,6 +1,6 @@
 <?php 
 
-Class Rutinas
+Class Rutina
 {
     public function get_rutinas()
 	{
