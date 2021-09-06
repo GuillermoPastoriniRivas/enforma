@@ -21,7 +21,7 @@
                                 <img src="<?= ASSETS . THEME ?>images/<?= $item->imagen ?>" alt="">
                             </div>
                             <div class="down-content">
-                                <span><?= $item->dificultad ?></span>
+                                <!-- <span>Dificultad <?= $item->dificultad ?></span> -->
                                 <h4><?= $item->titulo ?></h4>
                                 <p><?= $item->descripcion ?></p>
                             </div>
