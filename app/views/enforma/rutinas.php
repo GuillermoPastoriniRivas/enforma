@@ -1,7 +1,7 @@
 <?php $this->view("partes/header",$data); ?>
 
 <?php $this->view("partes/navegacion",$data); ?>
- 
+
   <section class="section" id="trainers">
         <div class="container">
             <div class="row">
@@ -18,7 +18,7 @@
                     <div class="col-lg-4">
                         <div class="trainer-item">
                             <div class="image-thumb">
-                                <img src="<?= ASSETS . THEME ?>images/<?= $item->imagen ?>" alt="">
+                                <img class="myImg"  src="<?= ASSETS . THEME ?>images/<?= $item->imagen ?>" alt="<?= $item->titulo ?>">
                             </div>
                             <div class="down-content">
                                 <!-- <span>Dificultad <?= $item->dificultad ?></span> -->
@@ -31,6 +31,6 @@
             </div>
         </div>
     </section>
-   
+    
 
     <?php $this->view("partes/footer",$data); ?>
