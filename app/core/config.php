@@ -8,7 +8,7 @@ define('DB_NAME', "enforma_db");
 define('DB_USER', "lospibesdelits");
 define('DB_PASS', "lospibesdelits");
 define('DB_TYPE', "mysql");
-define('DB_HOST', "201.213.235.57");
+define('DB_HOST', "186.136.118.136");
 
 define('THEME','enforma/');
 
