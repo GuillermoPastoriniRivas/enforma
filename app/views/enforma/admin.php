@@ -146,7 +146,8 @@
                         <td><img src="<?= ASSETS . THEME ?>images/<?= $item->imagen ?>" alt="" width="50"></td>
                         <td><?= $item->precio  ?></td>
                         <td class="td-actions text-left">
-                              <button type="button" rel="tooltip" title="Editar" class="btn btn-primary btn-link btn-sm">
+                              <button type="button" rel="tooltip"  data-toggle="modal" data-target="#actualizarSuplemento"   title="Editar" class="btn btn-primary btn-link btn-sm"
+                              onclick="actualizarSuplemento('<?= $item->id_suplementos ?>', '<?= $item->titulo ?>', '<?= $item->descripcion ?>', '<?= $item->precio ?>');">
                                 <i class="material-icons">edit</i>
                               </button>
                               <button type="button" rel="tooltip" title="Borrar" class="btn btn-danger btn-link btn-sm" onclick="eliminarSuplemento('<?= $item->id_suplementos ?>');">
@@ -159,12 +160,56 @@
                   </table>
                 </div>
               </div>
-            </div class="col-12">
             
             <div>
-            <div>
           </div>
+          <div class="row">
+           
+           <div class="col-12">
+             <div class="card">
+               <div class="card-header card-header-danger" style="position:relative">
+                 <h4 class="card-title">Rutinas</h4>
+                 <p class="card-category">Última actualización 08/Ago/21</p>
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarRutina"  
+                   style="position:absolute;top:10px;right:10px;">
+                   Agregar Nuevo
+                 </button>
+               </div>
+               <div class="card-body table-responsive">
+                 <table class="table table-hover">
+                   <thead class="text-danger">
+                     <th>ID</th>
+                     <th>Titulo</th>
+                     <th>Descripción</th>
+                     <th>Imagen</th>
+                     <th>Acciones</th>
+                   </thead>
+                   <tbody>
+                   <?php foreach($data['rutinas'] as $key => $item): ?>
+                     <tr>
+                       <td><?=$key+1?></td>
+                       <td><?= $item->titulo  ?></td>
+                       <td><?= $item->descripcion  ?></td>
+                       <td><img src="<?= ASSETS . THEME ?>images/<?= $item->imagen ?>" alt="" width="50"></td>
+                       <td class="td-actions text-left">
+                             <button type="button" rel="tooltip" title="Editar"  data-toggle="modal" data-target="#actualizarRutina"   class="btn btn-primary btn-link btn-sm"  onclick="actualizarRutina('<?= $item->id_rutina ?>', '<?= $item->titulo ?>', '<?= $item->descripcion ?>');">
+                               <i class="material-icons">edit</i>
+                             </button>
+                             <button type="button" rel="tooltip" title="Borrar" class="btn btn-danger btn-link btn-sm" onclick="eliminarRutina('<?= $item->id_rutina ?>');">
+                               <i class="material-icons">close</i>
+                             </button>
+                       </td>
+                     </tr>
+                     <?php endforeach; ?>
+                   </tbody>
+                 </table>
+               </div>
+             </div>
+           
+           <div>
+         </div>
         </div>
+        
       </div>
       
     </div>
@@ -219,6 +264,168 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
               <button type="submit" class="btn btn-primary">Agregar Producto</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="agregarRutina" tabindex="-1" role="dialog" aria-labelledby="agregarRutinaLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border: none;">
+          <div class="modal-header"  style="color: #fff; background-color: #9124a3; border-color: #701c7e; border: none;">
+            <h5 class="modal-title " id="exampleModalLabel" style="font-weight: 500;">Agregar Rutina</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="<?=ROOT?>admin/agregarRutina" method="POST">
+            <div class="modal-body">
+              
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Título</label>
+                      <input type="text" class="form-control" name="titulo" minlength="5" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Descripción del producto</label>
+                        <textarea class="form-control" rows="4" minlength="5" name="descripcion" required></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="imagenSuplemento">Imagen</label>
+                      <input type="file" class="form-control-file" name="imagen" id="imagenSuplemento" required>
+                    </div>
+                  </div>
+                </div>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Agregar Rutina</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="actualizarRutina" tabindex="-1" role="dialog" aria-labelledby="agregarRutinaLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border: none;">
+          <div class="modal-header"  style="color: #fff; background-color: #9124a3; border-color: #701c7e; border: none;">
+            <h5 class="modal-title " id="exampleModalLabel" style="font-weight: 500;">Agregar Rutina</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="<?=ROOT?>admin/actualizarRutina" method="POST">
+            <div class="modal-body">
+              
+                <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">ID</label>
+                      <input type="text" class="form-control" name="id_rutina" required id="idRutina">
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Título</label>
+                      <input type="text" class="form-control" name="titulo" minlength="5" required id="tituloRutina">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Descripción del producto</label>
+                        <textarea class="form-control" rows="4" minlength="5" name="descripcion" required id="descripcionRutina"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="imagenSuplemento">Imagen</label>
+                      <input type="file" class="form-control-file" name="imagen" id="imagenSuplemento" required>
+                    </div>
+                  </div>
+                </div> -->
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Agregar Rutina</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="actualizarSuplemento" tabindex="-1" role="dialog" aria-labelledby="agregarRutinaLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border: none;">
+          <div class="modal-header"  style="color: #fff; background-color: #9124a3; border-color: #701c7e; border: none;">
+            <h5 class="modal-title " id="exampleModalLabel" style="font-weight: 500;">Editar Suplemento</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="<?=ROOT?>admin/actualizarSuplemento" method="POST">
+            <div class="modal-body">
+              
+                <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">ID</label>
+                      <input type="text" class="form-control" name="id_suplementos" required id="idSuplementos">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Título</label>
+                      <input type="text" class="form-control" name="titulo" minlength="5" required id="tituloSuplementos">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Precio</label>
+                      <input type="text" class="form-control" name="precio" minlength="5" required id="precioSuplementos">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Descripción</label>
+                        <textarea class="form-control" rows="4" minlength="5" name="descripcion" required id="descripcionSuplementos"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="imagenSuplemento">Imagen</label>
+                      <input type="file" class="form-control-file" name="imagen" id="imagenSuplemento" required>
+                    </div>
+                  </div>
+                </div> -->
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Editar Suplemento</button>
             </div>
           </form>
         </div>
@@ -285,8 +492,30 @@
         }
       });
     }
-
-
+    function actualizarRutina(id, titulo, descripcion) {
+      $('#idRutina').val(id)
+      $('#tituloRutina').val(titulo)
+      $('#descripcionRutina').val(descripcion)
+    }
+    function actualizarSuplemento(id, titulo, descripcion, precio) {
+      $('#idSuplementos').val(id)
+      $('#tituloSuplementos').val(titulo)
+      $('#precioSuplementos').val(precio)
+      $('#descripcionSuplementos').val(descripcion)
+    }
+    function eliminarRutina(id) {
+      $.ajax({
+        url: "admin/eliminarRutina",
+        data: {id:id},
+        method:'POST',
+        success: function(res) {
+          location.reload();
+        },
+        error: function(error) {
+          console.log(error)
+        }
+      });
+    }
     $(document).ready(function() {
       $().ready(function() {
         $sidebar = $('.sidebar');
