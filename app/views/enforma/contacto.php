@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-xs-12">
                     <div class="contact-form">
-                        <form action="<?=ROOT?>contacto/enviar_mail" id="contact" method="post">
+                        <form action="<?=ROOT?>contacto/enviar_mail_contacto" id="contact" method="post">
                           <div class="row">
                             <div class="col-md-6 col-sm-12">
                               <fieldset>

@@ -43,8 +43,8 @@
 
           <!-- Modal Header -->
           <div class="modal-header">
-            <h4 class="modal-title">Complete los Datos</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title btnModalClose">Complete los Datos</h4>
+            <button type="button" class="close btnModalClose" data-dismiss="modal">&times;</button>
           </div>
 
           <!-- Modal body -->
@@ -56,7 +56,7 @@
 
           <!-- Modal footer -->
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-danger btnModalClose" data-dismiss="modal">Close</button>
           </div>
 
         </div>
@@ -89,6 +89,9 @@
       span.onclick = function() {
         modal.style.display = "none";
       }  
+      $('.btnModalClose').click(function(){
+        $('#myModal2').fadeOut()
+      });
     </script>
    
   </body>

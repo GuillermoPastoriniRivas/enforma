@@ -13,27 +13,22 @@ Class Contacto extends Controller
 
 
 
-	public function enviar_mail(){
+	public function enviar_mail_contacto(){
 
 		if(count($_POST) > 0){
 			$data = (object)$_POST;
 		}else{
 			$data = file_get_contents("php://input");
 			$data = json_decode($data);
-
 		}
 
-		$to=$data->email;
+		$email=$data->email;
 		$asunto=$data->subject;
 		$mensaje=$data->message;
 		$nombre=$data->name;
 		
-		mail(
-			
-    		 $to,
-    		 $asunto,
-   			 $mensaje,	 
-		);
+		$res = enviar_email($email, $asunto, $mensaje, $nombre);
+		header(("Location: " . ROOT . ""));
 	}
 }
 ?>
