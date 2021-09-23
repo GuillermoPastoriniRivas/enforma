@@ -1,10 +1,12 @@
 <?php 
 
+
 Class Admin extends Controller
 {
 
 	public function index()
 	{
+		//enviar_email();
 		$Suplementos = $this->load_model('Suplemento');
 		$Rutinas = $this->load_model('Rutina');
 		$data = [];
@@ -13,6 +15,7 @@ Class Admin extends Controller
 		$data['rutinas'] = $Rutinas->get_rutinas();
 		$this->view("admin",$data);
 	}
+
 	
 	public function agregarSuplemento() {
 		if(count($_POST) > 0){

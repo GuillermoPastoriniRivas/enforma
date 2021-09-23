@@ -17,13 +17,14 @@
                 <?php foreach($data['suplementos'] as $item): ?>
                     <div class="col-lg-4">
                         <div class="trainer-item">
-                            <div class="image-thumb">
-                                <img src="<?= ASSETS . THEME ?>images/<?= $item->imagen ?>" alt="">
+                            <div class="image-thumb text-center">
+                                <img src="<?= ASSETS . THEME ?>images/<?= $item->imagen ?>" style="height:300px;width:auto">
                             </div>
                             <div class="down-content">
-                                <span><?= $item->precio ?></span>
+                                <span>$ <?= $item->precio ?></span>
                                 <h4><?= $item->titulo ?></h4>
                                 <p><?= $item->descripcion ?></p>
+                                <button class="btn btn-primary reservarSuplemento" >Reservar</button>
                             </div>
                         </div>
                     </div>
@@ -32,5 +33,6 @@
         </div>
     </section>
     <!-- ***** Testimonials Ends ***** -->
+
 
     <?php $this->view("partes/footer",$data); ?>

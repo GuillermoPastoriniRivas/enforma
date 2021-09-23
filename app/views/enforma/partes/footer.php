@@ -37,10 +37,35 @@
         <!-- Modal Caption (Image Text) -->
         <div id="caption"></div>
     </div>
+    <div class="modal" id="myModal2">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Complete los Datos</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body  contact-form">
+            <input type="text" placeholder="Nombre">
+            <input type="text" placeholder="Celular">
+            <input type="text" placeholder="Direccion">
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
     <script>
       // Get the modal
       var modal = document.getElementById("myModal");
-
+      var modal2 = document.getElementById("myModal2");
       // Get the image and insert it inside the modal - use its "alt" text as a caption
      
       var modalImg = document.getElementById("img01");
@@ -49,6 +74,12 @@
         modal.style.display = "block";
         modalImg.src = this.src;
         captionText.innerHTML = this.alt;
+      })
+
+      $('.reservarSuplemento').click(function(){
+        modal2.style.display = "block";
+        // modalImg.src = this.src;
+        // captionText.innerHTML = this.alt;
       })
 
       // Get the <span> element that closes the modal

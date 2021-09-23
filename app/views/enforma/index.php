@@ -11,7 +11,7 @@
         <div class="video-overlay header-text">
             <div class="caption">
                 <h6>Desde 1993</h6>
-                <h2>Cuidando tu <em>imágen</em></h2>
+                <h2>Cuidando tu <em>imagen</em></h2>
                 <div class="main-button scroll-to-section">
                     <a href="#features">Inscribirse</a>
                 </div>
