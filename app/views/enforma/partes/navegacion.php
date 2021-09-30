@@ -23,11 +23,9 @@
                             <li class="scroll-to-section"><a href="<?=ROOT?>contacto"
                                 class="<?php if ($data['title']=='Contacto'):?>active<?php endif;?>">Contacto</a></li> 
                         
-<<<<<<< HEAD
+
                                     <li class="main-button"><a href="#">Inscribirse</a></li>
-=======
-                            <li class="main-button"><a href="#">Inscribirse</a></li>
->>>>>>> af114359f036bc2d5858a57932d4a1a981e6061f
+
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
