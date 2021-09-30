@@ -18,21 +18,20 @@
                 <?php foreach($data['tienda'] as $item): ?>
                     <div class="col-lg-4">
                         <div class="trainer-item">
-                            <div class="image-thumb">
-                                <img src="<?= ASSETS . THEME ?>images/<?= $item->imagen ?>" alt="">
+                            <div class="image-thumb text-center">
+                                <img src="<?= ASSETS . THEME ?>images/<?= $item->imagen ?>" style="height:300px;width:auto">
                             </div>
                             <div class="down-content">
-                                <span><?= $item->precio ?></span>
+                                <span>$ <?= $item->precio ?></span>
                                 <h4><?= $item->titulo ?></h4>
                                 <p><?= $item->descripcion ?></p>
-                                <p><?= $item->sexo ?></p>
                                 <p><?= $item->talle ?></p>
+                                <p><?= $item->sexo ?></p>
+                                <button class="btn btn-primary reservarSuplemento" >Reservar</button>
                             </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
             </div>
-        </div>
-    </section>
 
     <?php $this->view("partes/footer",$data); ?>

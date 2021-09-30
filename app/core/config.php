@@ -3,7 +3,6 @@
 define("WEBSITE_TITLE", 'CHEMIKAL DRINKS');
 
 
-//database name
 define('DB_NAME', "enforma_db");
 define('DB_USER', "lospibesdelits");
 define('DB_PASS', "lospibesdelits");
