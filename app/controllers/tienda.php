@@ -1,15 +1,15 @@
 <?php 
 
-Class Vestimenta extends Controller
+Class Tienda extends Controller
 {
 
 	public function index()
 	{
-        $Vestimenta = $this->load_model('Vestimenta');
+        $Tienda = $this->load_model('tienda_model');
 		$data = [];
-        $data['title'] = 'Vestimenta';
-        $data['vestimenta'] = $Vestimenta->get_vestimenta();
-		$this->view("vestimenta",$data);
+        $data['title'] = 'tienda';
+        $data['tienda'] = $Tienda->get_tienda();
+		$this->view("tienda",$data);
 	}
 
 

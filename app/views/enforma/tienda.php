@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="row">
-                <?php foreach($data['vestimenta'] as $item): ?>
+                <?php foreach($data['tienda'] as $item): ?>
                     <div class="col-lg-4">
                         <div class="trainer-item">
                             <div class="image-thumb">
@@ -34,6 +34,5 @@
             </div>
         </div>
     </section>
-    
 
     <?php $this->view("partes/footer",$data); ?>
