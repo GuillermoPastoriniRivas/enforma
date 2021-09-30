@@ -37,24 +37,24 @@ function enviar_email($email, $asunto, $mensaje, $nombre){
 	require 'PHPMailer/src/PHPMailer.php';
 	require 'PHPMailer/src/SMTP.php';
 		
-	$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+	$mail = new PHPMailer(true);                             
 	$body		= "<htmL><head> </head><body> <p>".$nombre.", email: ".$email."</p><p>Escribió: ".$asunto." : ". $mensaje."</p></body> </html>";
 	try {
 
 		$mail->CharSet = 'UTF-8';
-		$mail->SMTPDebug = 0;                                 // Enable verbose debug output
-		$mail->isSMTP();                                      // Set mailer to use SMTP
-		$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-		$mail->SMTPAuth = true;                               // Enable SMTP authentication
-		$mail->Username = 'mailservice.bct@gmail.com';                 // SMTP username
-		$mail->Password = 'lospibesdelits';                           // SMTP password
-		$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-		$mail->Port = 587;                                    // TCP port to connect to
+		$mail->SMTPDebug = 0;                                
+		$mail->isSMTP();                                     
+		$mail->Host = 'smtp.gmail.com';  
+		$mail->SMTPAuth = true;                             
+		$mail->Username = 'mailservice.bct@gmail.com';              
+		$mail->Password = 'lospibesdelits';                         
+		$mail->SMTPSecure = 'tls';                           
+		$mail->Port = 587;                                    
 
 		//Recipients
 		$mail->setFrom('mailservice.bct@gmail.com', 'BCT');
 		$mail->addAddress('pedropastorini11@gmail.com', 'Pedro');   
-		$mail->isHTML(true); // Set email format to HTML
+		$mail->isHTML(true); 
 		$mail->Subject = "Contacto por Pagina Web";
 		$mail->Body    = $body;
 		$mail->send();
