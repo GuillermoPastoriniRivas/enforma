@@ -83,5 +83,41 @@ Class Admin extends Controller
 		$Rutina = $this->load_model('Rutina');
 		$res = $Rutina->update_rutinas($data);
 		header(("Location: " . ROOT . "admin"));
+		
+	}
+	public function agregarTienda() {
+		if(count($_POST) > 0){
+			$data = (object)$_POST;
+		}else{
+			$data = file_get_contents("php://input");
+			$data = json_decode($data);
+		}
+		
+		$Tienda = $this->load_model('Tienda');
+		$res = $Tienda->add_tienda($data);
+		header(("Location: " . ROOT . "admin"));
+	}
+	
+	public function eliminarTienda() {
+		if(count($_POST) > 0){
+			$data = (object)$_POST;
+		}else{
+			$data = file_get_contents("php://input");
+			$data = json_decode($data);
+		}
+		$Tienda = $this->load_model('Tienda');
+		$res = $Tienda->eliminar_tienda($data->id);
+		return $res;
+	}
+	public function actualizarTienda() {
+		if(count($_POST) > 0){
+			$data = (object)$_POST;
+		}else{
+			$data = file_get_contents("php://input");
+			$data = json_decode($data);
+		}
+		$Tienda = $this->load_model('Tienda');
+		$res = $Tienda->eliminar_tienda($data->id);
+		return $res;
 	}
 }

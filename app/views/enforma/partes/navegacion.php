@@ -17,9 +17,6 @@
                             <li class="scroll-to-section"><a href="<?=ROOT?>tienda"
                                 class="<?php if ($data['title']=='Tienda'):?>active<?php endif;?>">Tienda</a></li> 
                            
-                          
-                                    <li class="scroll-to-section"><a href="<?=ROOT?>tienda"
-                                class="<?php if ($data['title']=='tienda'):?>active<?php endif;?>">Tienda</a></li> 
                             <li class="scroll-to-section"><a href="<?=ROOT?>contacto"
                                 class="<?php if ($data['title']=='Contacto'):?>active<?php endif;?>">Contacto</a></li> 
                         
