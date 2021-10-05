@@ -24,9 +24,9 @@
                             <div class="down-content">
                                 <span>$ <?= $item->precio ?></span>
                                 <h4><?= $item->titulo ?></h4>
-                                <p><?= $item->descripcion ?></p>
-                              <h4> <p>talle <?= $item->talle ?></p> </h4>
-                                <p><?= $item->sexo ?></p>
+                                <p>Descripción: <?= $item->descripcion ?></p>
+                              <h4> <p>Talle: <?= $item->talle ?></p> </h4>
+                                <p>Sexo: <?= $item->sexo ?></p>
                                 <button class="btn btn-primary reservarSuplemento" >Reservar</button>
                             </div>
                         </div>
