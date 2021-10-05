@@ -25,7 +25,7 @@
                                 <span>$ <?= $item->precio ?></span>
                                 <h4><?= $item->titulo ?></h4>
                                 <p><?= $item->descripcion ?></p>
-                              <h4>talle  <p><?= $item->talle ?></p> </h4>
+                              <h4> <p>talle <?= $item->talle ?></p> </h4>
                                 <p><?= $item->sexo ?></p>
                                 <button class="btn btn-primary reservarSuplemento" >Reservar</button>
                             </div>
