@@ -25,6 +25,7 @@ Class Admin extends Controller
 			$data = json_decode($data);
 		}
 		$Suplementos = $this->load_model('Suplemento');
+		print_r($_FILES);exit;
 		$res = $Suplementos->add_suplemento($data, $_FILES);
 		header(("Location: " . ROOT . "admin"));
 	}
@@ -41,6 +42,7 @@ Class Admin extends Controller
 		$res = $Rutina->add_rutinas($data);
 		header(("Location: " . ROOT . "admin"));
 	}
+
 	public function eliminarSuplemento() {
 		if(count($_POST) > 0){
 			$data = (object)$_POST;

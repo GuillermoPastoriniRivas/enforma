@@ -38,14 +38,10 @@ Class Suplemento
 		$size = 100;
 		$size = ($size * 1024 * 1024);
 
-	 	if(!file_exists($folder))
-	 	{
-	 		mkdir($folder,0777,true);
-	 	}
 		foreach ($FILES as $key => $img_row) {
 			if($img_row['error'] == 0 && in_array($img_row['type'], $allowed)) {
 				if($img_row['size'] < $size) {
-					$arr['imagen'] = $this->generate_filename(20) . explode("/", $img_row['type'])[1];
+					$arr['imagen'] = $this->generate_filename(20) . ".". explode("/", $img_row['type'])[1];
 					$destination = $folder . $arr['imagen'];
 					move_uploaded_file($img_row['tmp_name'], $destination);
 				} 

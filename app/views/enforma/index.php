@@ -98,9 +98,12 @@
             <div class="row" id="tabs">
               <div class="col-lg-4">
                 <ul>
-                  <li><a href='#tabs-1'><img src="<?= ASSETS . THEME ?>" alt="">Prevención de enfermedades</a></li>
-                  <li><a href='#tabs-2'><img src="<?= ASSETS . THEME ?>" alt="">El cuidado de la apariencia física</a></a></li>
-                  <li><a href='#tabs-3'><img src="<?= ASSETS . THEME ?>" alt="">Combate el estrés</a></a></li>
+                  <li><a class="d-flex align-items-center" href='#tabs-1'>
+                      <img src="<?= ASSETS . THEME ?>images/mancuerna_sin_fondo_rojisa.png" alt=""> 
+                      <sm>Prevención de enfermedades</sm>
+                    </a></li>
+                  <li><a class="d-flex align-items-center" href='#tabs-2'><img src="<?= ASSETS . THEME ?>images/mancuerna_sin_fondo_rojisa.png" alt=""> <sm>El cuidado de la apariencia física</sm></a></a></li>
+                  <li><a class="d-flex align-items-center" href='#tabs-3'><img src="<?= ASSETS . THEME ?>images/mancuerna_sin_fondo_rojisa.png" alt=""> <sm>Combate el estrés</sm></a></a></li>
                 
                 </ul>
               </div>
@@ -109,7 +112,7 @@
                   <article id='tabs-1'>
                     <img src="<?= ASSETS . THEME ?>images/training-image-01.jpg" alt="First Class">
                     <h4>Prevención de enfermedades</h4>
-                        <p>Mejoras de la presión areterial, se disminuye las posibilidades de varices, enfermedades como diabetes, sobrepeso y de tipo cardiovasculares</p>
+                        <p>Mejoras de la presión arterial, se disminuye las posibilidades de varices, enfermedades como diabetes, sobrepeso y de tipo cardiovasculares</p>
                     <div >
                       
                     </div>
