@@ -170,7 +170,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form action="<?=ROOT?>admin/agregarSuplemento" method="POST">
+          <form action="<?=ROOT?>admin/agregarSuplemento" method="POST" enctype="multipart/form-data">
             <div class="modal-body">
               
                 <div class="row">

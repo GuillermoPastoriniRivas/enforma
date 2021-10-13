@@ -25,9 +25,10 @@ Class Admin extends Controller
 			$data = json_decode($data);
 		}
 		$Suplementos = $this->load_model('Suplemento');
-		$res = $Suplementos->add_suplemento($data);
+		$res = $Suplementos->add_suplemento($data, $_FILES);
 		header(("Location: " . ROOT . "admin"));
 	}
+
 	public function agregarRutina() {
 		if(count($_POST) > 0){
 			$data = (object)$_POST;
