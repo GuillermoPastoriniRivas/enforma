@@ -68,7 +68,6 @@
               <div class="card">
                 <div class="card-header card-header-warning" style="position:relative">
                   <h4 class="card-title">Suplementos Deportivos</h4>
-                  <p class="card-category">Última actualización 08/Ago/21</p>
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarSuplemento"  
                     style="position:absolute;top:10px;right:10px;">
                     Agregar Nuevo
@@ -111,12 +110,61 @@
             <div>
           </div>
           <div class="row">
+           <div class="col-12">
+             <div class="card">
+               <div class="card-header card-header-success" style="position:relative">
+                 <h4 class="card-title">Tienda</h4>
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarTienda"  
+                   style="position:absolute;top:10px;right:10px;">
+                   Agregar Nuevo
+                 </button>
+               </div>
+               <div class="card-body table-responsive">
+                 <table class="table table-hover">
+                   <thead class="text-danger">
+                     <th>ID</th>
+                     <th>Titulo</th>
+                     <th>Descripción</th>
+                     <th>Imagen</th>
+                     <th>Precio</th>
+                     <th>Talle</th>
+                     <th>Sexo</th>
+                     <th>Acciones</th>
+                   </thead>
+                   <tbody>
+                   <?php foreach($data['tienda'] as $key => $item): ?>
+                     <tr>
+                       <td><?=$key+1?></td>
+                       <td><?= $item->titulo  ?></td>
+                       <td><?= $item->descripcion  ?></td>
+                       <td><img src="<?= ASSETS . THEME ?>images/<?= $item->imagen ?>" alt="" width="50"></td>
+                       <td><?= $item->precio  ?></td>
+                       <td><?= $item->talle  ?></td>
+                       <td><?= $item->sexo  ?></td>
+                       <td class="td-actions text-left">
+                             <button type="button" rel="tooltip"  data-toggle="modal" data-target="#actualizarTienda"   title="Editar" class="btn btn-primary btn-link btn-sm"
+                             onclick="actualizarTienda('<?= $item->id_tienda ?>', '<?= $item->titulo ?>', '<?= $item->descripcion ?>', '<?= $item->precio ?>', '<?= $item->talle ?>', '<?= $item->sexo ?>');">
+                               <i class="material-icons">edit</i>
+                             </button>
+                             <button type="button" rel="tooltip" title="Borrar" class="btn btn-danger btn-link btn-sm" onclick="eliminarTienda('<?= $item->id_tienda ?>');">
+                               <i class="material-icons">close</i>
+                             </button>
+                       </td>
+                     </tr>
+                     <?php endforeach; ?>
+                   </tbody>
+                 </table>
+               </div>
+             </div>
+           
+           <div>
+         </div>
+          <div class="row">
            
            <div class="col-12">
              <div class="card">
                <div class="card-header card-header-danger" style="position:relative">
                  <h4 class="card-title">Rutinas</h4>
-                 <p class="card-category">Última actualización 08/Ago/21</p>
                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarRutina"  
                    style="position:absolute;top:10px;right:10px;">
                    Agregar Nuevo
@@ -160,61 +208,11 @@
       </div>
       
     </div>
-   <div class="row">
-           
-           <div class="col-12">
-             <div class="card">
-               <div class="card-header card-header-warning" style="position:relative">
-                 <h4 class="card-title">Tienda</h4>
-                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarTienda"  
-                   style="position:absolute;top:10px;right:10px;">
-                   Agregar Nuevo
-                 </button>
-               </div>
-               <div class="card-body table-responsive">
-                 <table class="table table-hover">
-                   <thead class="text-danger">
-                     <th>ID</th>
-                     <th>Titulo</th>
-                     <th>Descripción</th>
-                     <th>Imagen</th>
-                     <th>Precio</th>
-                     <th>Talle</th>
-                     <th>Sexo</th>
-                     <th>Acciones</th>
-                   </thead>
-                   <tbody>
-                   <?php foreach($data['Vestimenta'] as $key => $item): ?>
-                     <tr>
-                       <td><?=$key+1?></td>
-                       <td><?= $item->titulo  ?></td>
-                       <td><?= $item->descripcion  ?></td>
-                       <td><img src="<?= ASSETS . THEME ?>images/<?= $item->imagen ?>" alt="" width="50"></td>
-                       <td><?= $item->precio  ?></td>
-                       <td><?= $item->talle  ?></td>
-                       <td><?= $item->sexo  ?></td>
-                       <td class="td-actions text-left">
-                             <button type="button" rel="tooltip"  data-toggle="modal" data-target="#actualizarTienda"   title="Editar" class="btn btn-primary btn-link btn-sm"
-                             onclick="actualizarTienda('<?= $item->id_tienda ?>', '<?= $item->titulo ?>', '<?= $item->descripcion ?>', '<?= $item->precio ?>', '<?= $item->talle ?>', '<?= $item->sexo ?>');">
-                               <i class="material-icons">edit</i>
-                             </button>
-                             <button type="button" rel="tooltip" title="Borrar" class="btn btn-danger btn-link btn-sm" onclick="eliminarTienda('<?= $item->id_tienda ?>');">
-                               <i class="material-icons">close</i>
-                             </button>
-                       </td>
-                     </tr>
-                     <?php endforeach; ?>
-                   </tbody>
-                 </table>
-               </div>
-             </div>
-           
-           <div>
-         </div>
+   
     <div class="modal fade" id="agregarSuplemento" tabindex="-1" role="dialog" aria-labelledby="agregarSuplementoLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content" style="border: none;">
-          <div class="modal-header"  style="color: #fff; background-color: #9124a3; border-color: #701c7e; border: none;">
+          <div class="modal-header"  style="color: #fff; background-color: #c90e17; border-color: #701c7e; border: none;">
             <h5 class="modal-title " id="exampleModalLabel" style="font-weight: 500;">Agregar Suplemento</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -269,7 +267,7 @@
     <div class="modal fade" id="agregarRutina" tabindex="-1" role="dialog" aria-labelledby="agregarRutinaLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content" style="border: none;">
-          <div class="modal-header"  style="color: #fff; background-color: #9124a3; border-color: #701c7e; border: none;">
+          <div class="modal-header"  style="color: #fff; background-color: #c90e17; border-color: #701c7e; border: none;">
             <h5 class="modal-title " id="exampleModalLabel" style="font-weight: 500;">Agregar Rutina</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -317,7 +315,7 @@
     <div class="modal fade" id="actualizarRutina" tabindex="-1" role="dialog" aria-labelledby="agregarRutinaLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content" style="border: none;">
-          <div class="modal-header"  style="color: #fff; background-color: #9124a3; border-color: #701c7e; border: none;">
+          <div class="modal-header"  style="color: #fff; background-color: #c90e17; border-color: #701c7e; border: none;">
             <h5 class="modal-title " id="exampleModalLabel" style="font-weight: 500;">Agregar Rutina</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -365,7 +363,7 @@
     <div class="modal fade" id="agregarTienda" tabindex="-1" role="dialog" aria-labelledby="agregarTiendaLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content" style="border: none;">
-          <div class="modal-header"  style="color: #fff; background-color: #9124a3; border-color: #701c7e; border: none;">
+          <div class="modal-header"  style="color: #fff; background-color: #c90e17; border-color: #701c7e; border: none;">
             <h5 class="modal-title " id="exampleModalLabel" style="font-weight: 500;">Agregar Tienda</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -431,7 +429,7 @@
     <div class="modal fade" id="actualizarSuplemento" tabindex="-1" role="dialog" aria-labelledby="agregarRutinaLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content" style="border: none;">
-          <div class="modal-header"  style="color: #fff; background-color: #9124a3; border-color: #701c7e; border: none;">
+          <div class="modal-header"  style="color: #fff; background-color: #c90e17; border-color: #701c7e; border: none;">
             <h5 class="modal-title " id="exampleModalLabel" style="font-weight: 500;">Editar Suplemento</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>

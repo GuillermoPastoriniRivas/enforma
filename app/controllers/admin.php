@@ -6,13 +6,14 @@ Class Admin extends Controller
 
 	public function index()
 	{
-		//enviar_email();
 		$Suplementos = $this->load_model('Suplemento');
 		$Rutinas = $this->load_model('Rutina');
+		$Tienda = $this->load_model('tienda_model');
 		$data = [];
         $data['title'] = 'Admin';
         $data['suplementos'] = $Suplementos->get_suplementos();
 		$data['rutinas'] = $Rutinas->get_rutinas();
+		$data['tienda'] = $Tienda->get_tienda();
 		$this->view("admin",$data);
 	}
 
@@ -95,8 +96,8 @@ Class Admin extends Controller
 			$data = json_decode($data);
 		}
 		
-		$Tienda = $this->load_model('Tienda');
-		$res = $Tienda->add_tienda($data);
+		$Tienda = $this->load_model('tienda_model');
+		$res = $Tienda->add_tienda($data, $_FILES);
 		header(("Location: " . ROOT . "admin"));
 	}
 	
@@ -107,7 +108,7 @@ Class Admin extends Controller
 			$data = file_get_contents("php://input");
 			$data = json_decode($data);
 		}
-		$Tienda = $this->load_model('Tienda');
+		$Tienda = $this->load_model('tienda_model');
 		$res = $Tienda->eliminar_tienda($data->id);
 		return $res;
 	}
@@ -118,7 +119,7 @@ Class Admin extends Controller
 			$data = file_get_contents("php://input");
 			$data = json_decode($data);
 		}
-		$Tienda = $this->load_model('Tienda');
+		$Tienda = $this->load_model('tienda_model');
 		$res = $Tienda->eliminar_tienda($data->id);
 		return $res;
 	}
