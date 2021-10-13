@@ -160,7 +160,57 @@
       </div>
       
     </div>
-   
+   <div class="row">
+           
+           <div class="col-12">
+             <div class="card">
+               <div class="card-header card-header-warning" style="position:relative">
+                 <h4 class="card-title">Tienda</h4>
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarTienda"  
+                   style="position:absolute;top:10px;right:10px;">
+                   Agregar Nuevo
+                 </button>
+               </div>
+               <div class="card-body table-responsive">
+                 <table class="table table-hover">
+                   <thead class="text-danger">
+                     <th>ID</th>
+                     <th>Titulo</th>
+                     <th>Descripción</th>
+                     <th>Imagen</th>
+                     <th>Precio</th>
+                     <th>Talle</th>
+                     <th>Sexo</th>
+                     <th>Acciones</th>
+                   </thead>
+                   <tbody>
+                   <?php foreach($data['Vestimenta'] as $key => $item): ?>
+                     <tr>
+                       <td><?=$key+1?></td>
+                       <td><?= $item->titulo  ?></td>
+                       <td><?= $item->descripcion  ?></td>
+                       <td><img src="<?= ASSETS . THEME ?>images/<?= $item->imagen ?>" alt="" width="50"></td>
+                       <td><?= $item->precio  ?></td>
+                       <td><?= $item->talle  ?></td>
+                       <td><?= $item->sexo  ?></td>
+                       <td class="td-actions text-left">
+                             <button type="button" rel="tooltip"  data-toggle="modal" data-target="#actualizarTienda"   title="Editar" class="btn btn-primary btn-link btn-sm"
+                             onclick="actualizarTienda('<?= $item->id_tienda ?>', '<?= $item->titulo ?>', '<?= $item->descripcion ?>', '<?= $item->precio ?>', '<?= $item->talle ?>', '<?= $item->sexo ?>');">
+                               <i class="material-icons">edit</i>
+                             </button>
+                             <button type="button" rel="tooltip" title="Borrar" class="btn btn-danger btn-link btn-sm" onclick="eliminarTienda('<?= $item->id_tienda ?>');">
+                               <i class="material-icons">close</i>
+                             </button>
+                       </td>
+                     </tr>
+                     <?php endforeach; ?>
+                   </tbody>
+                 </table>
+               </div>
+             </div>
+           
+           <div>
+         </div>
     <div class="modal fade" id="agregarSuplemento" tabindex="-1" role="dialog" aria-labelledby="agregarSuplementoLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content" style="border: none;">
@@ -225,7 +275,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form action="<?=ROOT?>admin/agregarRutina" method="POST">
+          <form action="<?=ROOT?>admin/agregarRutina" method="POST" enctype="multipart/form-data">
             <div class="modal-body">
               
                 <div class="row">
@@ -306,6 +356,73 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
               <button type="submit" class="btn btn-primary">Agregar Rutina</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+       
+    <div class="modal fade" id="agregarTienda" tabindex="-1" role="dialog" aria-labelledby="agregarTiendaLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border: none;">
+          <div class="modal-header"  style="color: #fff; background-color: #9124a3; border-color: #701c7e; border: none;">
+            <h5 class="modal-title " id="exampleModalLabel" style="font-weight: 500;">Agregar Tienda</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="<?=ROOT?>admin/agregarTienda" method="POST" enctype="multipart/form-data">
+            <div class="modal-body">
+              
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Título</label>
+                      <input type="text" class="form-control" name="titulo" minlength="5" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Precio</label>
+                      <input type="number" class="form-control" min="1" name="precio" required>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Descripción del producto</label>
+                        <textarea class="form-control" rows="4" minlength="5" name="descripcion" required></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="imagenSuplemento">Imagen</label>
+                      <input type="file" class="form-control-file" name="imagen" id="imagenSuplemento" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Talle</label>
+                      <input type="text" class="form-control" name="talle" minlength="1" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Sexo</label>
+                      <input type="text" class="form-control" name="sexo" minlength="1" required>
+                    </div>
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Agregar Producto</button>
             </div>
           </form>
         </div>

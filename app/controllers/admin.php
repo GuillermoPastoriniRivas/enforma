@@ -25,7 +25,6 @@ Class Admin extends Controller
 			$data = json_decode($data);
 		}
 		$Suplementos = $this->load_model('Suplemento');
-		print_r($_FILES);exit;
 		$res = $Suplementos->add_suplemento($data, $_FILES);
 		header(("Location: " . ROOT . "admin"));
 	}
@@ -39,7 +38,7 @@ Class Admin extends Controller
 		}
 		
 		$Rutina = $this->load_model('Rutina');
-		$res = $Rutina->add_rutinas($data);
+		$res = $Rutina->add_rutinas($data, $_FILES);
 		header(("Location: " . ROOT . "admin"));
 	}
 
