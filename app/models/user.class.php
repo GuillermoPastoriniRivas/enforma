@@ -4,251 +4,53 @@ Class User
 {
 	private $error = "";
 
-	public function signup($POST)
+	public function signup($datos)
 	{
-		$data = array();
-		$db = Database::getInstance();
+		$arr['nombre'] = $datos->nombre;
+		$arr['email'] = $datos->email;
+		$arr['celular'] = $datos->celular;
+		$arr['password'] = password_hash($datos->password, PASSWORD_DEFAULT);
 
-		$data['name'] 		= trim($POST['name']);
-		$data['email'] 		= trim($POST['email']);
-		$data['password'] 	= trim($POST['password']);
-		$password2 			= trim($POST['password2']);
+		$DB = Database::newInstance();
 
-		if(empty($data['email']) || !preg_match("/^[0-9a-zA-Z_-.+s]+@[a-zA-Z]+.[a-zA-Z]+$/", $data['email']))
-		{
-			$this->error .= "Por favor, ingresar un email valido <br>";
+		$query = "INSERT INTO users (nombre, email, celular, password) 
+					VALUES (:nombre, :email, :celular, :password)";
+		$check = $DB->write($query,$arr); 
+
+		if ($check) {
+			return true;
+		} else {
+			return false;
 		}
-
-		if(empty($data['name']) || !preg_match("/^[a-zA-Z]+$/", $data['name']))
-		{
-			$this->error .= "Por favor, ingresar un nombre valido <br>";
-		}
-
-		if($data['password'] !== $password2)
-		{
-			$this->error .= "Las contraseñas no coinciden <br>";
-		}
-
-		if(strlen($data['password']) < 4)
-		{
-			$this->error .= "La contraseña tiene que tener al menos 4 caracteres. <br>";
-		}
-
-		$sql = "select * from users where email = :email limit 1";
-		$arr['email'] = $data['email'];
-		$check = $db->read($sql,$arr);
-		if(is_array($check)){
-			$this->error .= "El email ya esta en uso <br>";
-		}
-
-		$data['url_address'] = $this->get_random_string_max(60);
-
-		$arr = false;
-		$sql = "select * from users where url_address = :url_address limit 1";
-		$arr['url_address'] = $data['url_address'];
-		$check = $db->read($sql,$arr);
-		if(is_array($check)){
-
-			$data['url_address'] = $this->get_random_string_max(60);
-		}
-
-		if($this->error == ""){
-			
-			$data['rank'] = "customer";
-			$data['date'] = date("Y-m-d H:i:s");
-			$data['password'] = hash('sha1',$data['password']);
-
-			$query = "insert into users (url_address,name,email,password,rank,date) values (:url_address,:name,:email,:password,:rank,:date)";
-			$result = $db->write($query,$data);
-
-			if($result){
-
-				header("Location: " . ROOT . "login");
-				die;
-			}
-
-		}
-
-		$_SESSION['error'] = $this->error;
-
 	}
 
-	public function login($POST)
+	public function login($datos)
 	{
-
-		$data = array();
-		$db = Database::getInstance();
-
- 		$data['email'] 		= trim($POST['email']);
-		$data['password'] 	= trim($POST['password']);
- 
-		if(empty($data['email']) || !preg_match("/^[0-9a-zA-Z_-]+@[a-zA-Z]+.[a-zA-Z]+$/", $data['email']))
-		{
-			$this->error .= "Por favor, ingresar un email valido <br>";
-		}
- 
- 		if(strlen($data['password']) < 4)
-		{
-			$this->error .= "La contraseña tiene que tener al menos 4 caracteres. <br>";
-		}
-
-  		if($this->error == ""){
-
 		
- 			$data['password'] = hash('sha1',$data['password']);
-
-			$sql = "select * from users where email = :email && password = :password limit 1";
- 			$result = $db->read($sql,$data);
-			if(is_array($result)){
-				
-				$_SESSION['user_url'] = $result[0]->url_address;
-				header("Location: " . ROOT . "home");
-				die;
-			}
-
-			$this->error .= "Email o contraseña incorrectos <br>";
-
-		}
-
-		$_SESSION['error'] = $this->error;
 	}
 
-	public function get_user($url)
+	public function get_user($email)
 	{
-
-		$db = Database::newInstance();
-		$arr = false;
-
-		$arr['url'] = addslashes($url);
-		$query = "select * from users where url_address = :url limit 1";
-
-		$result = $db->read($query,$arr);
-		
-		if(is_array($result))
-		{
+		$DB = Database::newInstance();
+		$query = "SELECT * FROM users WHERE email = :email LIMIT 1";
+		$arr['email'] = $email;
+		$result = $DB->read($query,$arr);
+		if(isset($result[0])) {
 			return $result[0];
+		} else {
+			return false;
 		}
-
-		return false;
-	}
-
-	public function get_customers()
-	{
-
-		$db = Database::newInstance();
-		$arr = false;
-
-		$arr['rank'] = "customer";
-		$query = "select * from users where rank = :rank ";
-
-		$result = $db->read($query,$arr);
 		
-		if(is_array($result))
-		{
-			return $result;
-		}
-
-		return false;
 	}
-	
-	public function get_admins()
+
+	public function check_login()
 	{
-
-		$db = Database::newInstance();
-		$arr = false;
-
-		$arr['rank'] = "admin";
-		$query = "select * from users where rank = :rank ";
-
-		$result = $db->read($query,$arr);
-		
-		if(is_array($result))
-		{
-			return $result;
-		}
-
-		return false;
-	}
-
-
-	private function get_random_string_max($length) {
-
-		$array = array(0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
-		$text = "";
-
-		$length = rand(4,$length);
-
-		for($i=0;$i<$length;$i++) {
-
-			$random = rand(0,61);
-			
-			$text .= $array[$random];
-
-		}
-
-		return $text;
-	}
-
-	public function check_login($redirect = false, $allowed = array())
-	{
-
-		$db = Database::getInstance();
-
-		if(count($allowed) > 0){
-		
-			$arr['url'] = $_SESSION['user_url'];
-			$query = "select * from users where url_address = :url limit 1";
-			$result = $db->read($query,$arr);
-				
-			if(is_array($result))
-			{
-				$result = $result[0];
-				if(in_array($result->rank, $allowed)){
-
-					return $result;
-				}
-
-			}
-			
-			header("Location: " . ROOT . "login");
-			die;
- 
-		}else{
-			 
-	 		if(isset($_SESSION['user_url']))
-			{
-				$arr = false;
-				$arr['url'] = $_SESSION['user_url'];
-				$query = "select * from users where url_address = :url limit 1";
-
-				$result = $db->read($query,$arr);
-				
-				if(is_array($result))
-				{
-					return $result[0];
-				}
-			}
-
-			if($redirect){
-				header("Location: " . ROOT . "login");
-				die;
-			}
-		}
-
-		return false;
 
 	}
 
 	public function logout()
 	{
 
-		if(isset($_SESSION['user_url']))
-		{
-			unset($_SESSION['user_url']);
-		}
-
-		header("Location: " . ROOT . "home");
-		die;
 	}
 
 

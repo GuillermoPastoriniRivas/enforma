@@ -41,17 +41,20 @@
             <h4 class="modal-title btnModalClose">Complete los Datos</h4>
             <button type="button" class="close btnModalClose" data-dismiss="modal">&times;</button>
           </div>
-
+          <form action="<?=ROOT?>suplementos/enviar_reserva_mail" method="POST">
           <div class="modal-body  contact-form">
+            
             <input type="text" placeholder="Nombre">
             <input type="text" placeholder="Celular">
             <input type="text" placeholder="Direccion">
+            
           </div>
 
           <div class="modal-footer">
+            <button type="submit" class="btn btn-danger btnModalClose" >Reservar</button>
             <button type="button" class="btn btn-danger btnModalClose" data-dismiss="modal">Close</button>
           </div>
-
+          </form>
         </div>
       </div>
     </div>

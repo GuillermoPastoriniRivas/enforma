@@ -7,32 +7,28 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-xs-12">
                     <div class="contact-form">
-                        <form action="<?=ROOT?>contacto/enviar_mail_contacto" id="contact" method="post">
+                        <form action="<?=ROOT?>signup/registro" id="contact" method="post" style="max-width: 50%;margin: 0 auto;">
                           <div class="row">
+                          <div class="col-md-12 mb-3">
+                            <h2>Registrarse</h2>
+                          </div>
                             <div class="col-md-6 col-sm-12">
-                              <fieldset>
-                                <input name="name" type="text" id="name" placeholder="Nombre*" required>
-                              </fieldset>
+                                <input name="nombre" type="text" id="nombre" placeholder="Nombre*" required>
                             </div>
                             <div class="col-md-6 col-sm-12">
-                              <fieldset>
-                                <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Email*" required="">
-                              </fieldset>
+                                <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Email*" required>
                             </div>
                             <div class="col-md-12 col-sm-12">
-                              <fieldset>
-                                <input name="subject" type="text" id="subject" placeholder="Asunto">
-                              </fieldset>
+                                <input name="celular" type="number" id="celular" placeholder="Celular" required minlengh="9">
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <input name="password" type="password" id="password" placeholder="Contraseña">
                             </div>
                             <div class="col-lg-12">
-                              <fieldset>
-                                <textarea name="message" rows="6" id="message" placeholder="Mensaje" required=""></textarea>
-                              </fieldset>
+                              <button type="submit" id="form-submit" class="main-button">Registrarse</button>
                             </div>
-                            <div class="col-lg-12">
-                              <fieldset>
-                                <button type="submit" id="form-submit" class="main-button">Enviar Mensaje</button>
-                              </fieldset>
+                            <div class="col-lg-12 mt-3">
+                              ¿Ya tienes una cuenta? <a href="<?=ROOT?>login">Inicia Sesión</a>
                             </div>
                           </div>
                         </form>

@@ -8,20 +8,24 @@
                             <li class="scroll-to-section"><a href="<?=ROOT?>" 
                                 class="<?php if ($data['title']=='Inicio'):?>active<?php endif;?>">Inicio</a>
                             </li>
-                            <li class="scroll-to-section"><a href="<?=ROOT?>rutinas" 
-                                class="<?php if ($data['title']=='Rutinas'):?>active<?php endif;?>">Rutinas</a></li>
-
+                            <?php if (isset($_SESSION['id_user'])):?>
+                                <li class="scroll-to-section"><a href="<?=ROOT?>rutinas" 
+                                    class="<?php if ($data['title']=='Rutinas'):?>active<?php endif;?>">Rutinas</a></li>
+                            <?php endif;?>
                             <li class="scroll-to-section"><a href="<?=ROOT?>suplementos"
                             class="<?php if ($data['title']=='Suplementos'):?>active<?php endif;?>">Suplementos</a></li>
-
-                            <li class="scroll-to-section"><a href="<?=ROOT?>tienda"
-                                class="<?php if ($data['title']=='Tienda'):?>active<?php endif;?>">Tienda</a></li> 
+                                <li class="scroll-to-section"><a href="<?=ROOT?>tienda"
+                                class="<?php if ($data['title']=='Tienda'):?>active<?php endif;?>">Tienda</a></li>  
+                            
                            
                             <li class="scroll-to-section"><a href="<?=ROOT?>contacto"
                                 class="<?php if ($data['title']=='Contacto'):?>active<?php endif;?>">Contacto</a></li> 
-                        
-
-                                    <li class="main-button"><a href="#">Inscribirse</a></li>
+                                   
+                                    <?php if (isset($_SESSION['id_user'])):?>
+                                        <li><a href="#">Hola <?=$_SESSION['nombre']?></a></li>
+                                    <?php else:?>
+                                        <li class="main-button"><a href="<?=ROOT?>signup">Ingresar</a></li>
+                                    <?php endif;?>
 
                         </ul>        
                         <a class='menu-trigger'>
