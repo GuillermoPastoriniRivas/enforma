@@ -24,6 +24,8 @@
                             </div>
                             <div class="col-lg-12 mt-3">
                               ¿No tienes una cuenta? <a href="<?=ROOT?>signup">Registrarse</a>
+                              <br>
+                              Inicia sesión para tener acceso a las rutinas!
                             </div>
                           </div>
                         </form>

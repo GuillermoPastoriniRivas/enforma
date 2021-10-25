@@ -29,6 +29,8 @@
                             </div>
                             <div class="col-lg-12 mt-3">
                               ¿Ya tienes una cuenta? <a href="<?=ROOT?>login">Inicia Sesión</a>
+                              <br>
+                              Create una cuenta para tener acceso a las rutinas!
                             </div>
                           </div>
                         </form>

@@ -37,7 +37,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
 
-          <div class="modal-header">
+          <div class="modal-content">
             <h4 class="modal-title btnModalClose">Complete los Datos</h4>
             <button type="button" class="close btnModalClose" data-dismiss="modal">&times;</button>
           </div>
