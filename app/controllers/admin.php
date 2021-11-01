@@ -6,15 +6,24 @@ Class Admin extends Controller
 
 	public function index()
 	{
-		$Suplementos = $this->load_model('Suplemento');
-		$Rutinas = $this->load_model('Rutina');
-		$Tienda = $this->load_model('tienda_model');
-		$data = [];
-        $data['title'] = 'Admin';
-        $data['suplementos'] = $Suplementos->get_suplementos();
-		$data['rutinas'] = $Rutinas->get_rutinas();
-		$data['tienda'] = $Tienda->get_tienda();
-		$this->view("admin",$data);
+		if (!isset($_SESSION['id_user'])) {
+			header(("Location: " . ROOT.'login' ));
+		} else {
+			if($_SESSION['isAdmin'] == 1) {
+				$Suplementos = $this->load_model('Suplemento');
+				$Rutinas = $this->load_model('Rutina');
+				$Tienda = $this->load_model('tienda_model');
+				$data = [];
+				$data['title'] = 'Admin';
+				$data['suplementos'] = $Suplementos->get_suplementos();
+				$data['rutinas'] = $Rutinas->get_rutinas();
+				$data['tienda'] = $Tienda->get_tienda();
+				$this->view("admin",$data);
+			} else {
+				header(("Location: " . ROOT ));
+			}
+		}
+		
 	}
 
 	

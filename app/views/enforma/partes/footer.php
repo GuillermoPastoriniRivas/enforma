@@ -2,7 +2,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; 2021 | Enforma Gim  <img src="<?= ASSETS . THEME ?>images/logo.png" alt="BCT" style="width:30px; float:right"></p>
+                    <p>Todos los derechos reservados &copy; 2021 | Enforma Gim  <img src="<?= ASSETS . THEME ?>images/logo.png" alt="BCT" style="width:30px; float:right"></p>
             
                 </div>
             </div>
@@ -38,21 +38,23 @@
         <div class="modal-content">
 
           <div class="modal-content">
-            <h4 class="modal-title btnModalClose">Complete los Datos</h4>
+            <h4 class="modal-title ">Complete los Datos</h4>
             <button type="button" class="close btnModalClose" data-dismiss="modal">&times;</button>
           </div>
           <form action="<?=ROOT?>suplementos/enviar_reserva_mail" method="POST">
           <div class="modal-body  contact-form">
             
-            <input type="text" placeholder="Nombre">
-            <input type="text" placeholder="Celular">
-            <input type="text" placeholder="Direccion">
+            <input type="text" placeholder="Nombre" name="name" minlength="3" required>
+            <input type="number" placeholder="Celular" name="celular" minlength="7" required>
+            <input type="text" placeholder="Direccion" name="direccion" minlength="10" required>
             
+            <input type="hidden" name="titulo" id="tituloSupl">
+            <input type="hidden" name="id" id="idSupl">
           </div>
 
           <div class="modal-footer">
-            <button type="submit" class="btn btn-danger btnModalClose" >Reservar</button>
-            <button type="button" class="btn btn-danger btnModalClose" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-success" >Reservar</button>
+            <button type="button" class="btn btn-danger btnModalClose" data-dismiss="modal">Cerrar</button>
           </div>
           </form>
         </div>
@@ -74,7 +76,10 @@
 
       $('.reservarSuplemento').click(function(){
         modal2.style.display = "block";
-      
+        var id = $(this).data('id');
+        var titulo = $(this).data('titulo');
+        $('#idSupl').val(id);
+        $('#tituloSupl').val(titulo);
       })
 
       var span = document.getElementsByClassName("close")[0];

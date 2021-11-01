@@ -8,9 +8,15 @@ Class Login extends Controller
 		$data['title'] = 'Login';
 
 		if (isset($_SESSION['id_user'])) {
-			header(("Location: " . ROOT ));
+			if($_SESSION['isAdmin'] == 1) {
+				header(("Location: " . ROOT . 'admin'));
+			} else {
+				header(("Location: " . ROOT ));
+			}
+		} else {
+			$this->view("login",$data);
 		} 
-		$this->view("login",$data);
+		
 	}
 
 	public function login() {
@@ -29,6 +35,7 @@ Class Login extends Controller
 				$_SESSION['nombre'] = $usuario->nombre;
 				$_SESSION['email'] = $usuario->email;
 				$_SESSION['celular'] = $usuario->celular;
+				$_SESSION['isAdmin'] = $usuario->isAdmin;
 				$this->index();
 			} else {
 				echo 'La contraseña no es válida.';

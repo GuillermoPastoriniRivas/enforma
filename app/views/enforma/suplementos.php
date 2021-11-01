@@ -24,7 +24,9 @@
                                 <span>$ <?= $item->precio ?></span>
                                 <h4><?= $item->titulo ?></h4>
                                 <p><?= $item->descripcion ?></p>
-                                <button class="btn btn-primary reservarSuplemento" >Reservar</button>
+                                <button class="btn btn-primary reservarSuplemento" 
+                                data-id="<?=$item->id_suplementos?>" data-titulo="<?=$item->titulo?>"
+                                >Reservar</button>
                             </div>
                         </div>
                     </div>

@@ -30,7 +30,7 @@ function redirect($link)
 	die;
 }
 
-function enviar_email($email, $asunto, $mensaje, $nombre){
+function enviar_email($contacto, $asunto, $mensaje, $nombre){
 
 	header('Content-Type: text/html; charset=UTF-8');
  	require 'PHPMailer/src/Exception.php';
@@ -38,7 +38,7 @@ function enviar_email($email, $asunto, $mensaje, $nombre){
 	require 'PHPMailer/src/SMTP.php';
 		
 	$mail = new PHPMailer(true);                             
-	$body		= "<htmL><head> </head><body> <p>".$nombre.", email: ".$email."</p><p>Escribió: ".$asunto." : ". $mensaje."</p></body> </html>";
+	$body		= "<htmL><head> </head><body> <p>".$nombre.", contacto: ".$contacto."</p><p>Escribió: ".$asunto." : ". $mensaje."</p></body> </html>";
 	try {
 
 		$mail->CharSet = 'UTF-8';

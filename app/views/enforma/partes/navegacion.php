@@ -16,13 +16,22 @@
                             class="<?php if ($data['title']=='Suplementos'):?>active<?php endif;?>">Suplementos</a></li>
                                 <li class="scroll-to-section"><a href="<?=ROOT?>tienda"
                                 class="<?php if ($data['title']=='Tienda'):?>active<?php endif;?>">Tienda</a></li>  
-                            
-                           
-                            <li class="scroll-to-section"><a href="<?=ROOT?>contacto"
+
+                                    <?php if (isset($_SESSION['id_user']) AND $_SESSION['isAdmin'] == 1):?>
+                                        <li><a href="<?=ROOT?>admin">Admin</a></li>
+                                    <?php else:?>
+                                        <li class="scroll-to-section"><a href="<?=ROOT?>contacto"
                                 class="<?php if ($data['title']=='Contacto'):?>active<?php endif;?>">Contacto</a></li> 
+                                    <?php endif;?>
+
+                                   
+
+                                   
+                           
+                          
                                    
                                     <?php if (isset($_SESSION['id_user'])):?>
-                                        <li><a href="#">Hola <?=$_SESSION['nombre']?></a></li>
+                                        <li><a href="<?=ROOT?>logout">Cerrar Sesión</a></li>
                                     <?php else:?>
                                         <li class="main-button"><a href="<?=ROOT?>signup">Ingresar</a></li>
                                     <?php endif;?>
