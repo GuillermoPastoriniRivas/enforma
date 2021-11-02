@@ -29,6 +29,7 @@ Class Signup extends Controller
 			$_SESSION['nombre'] = $usuario->nombre;
 			$_SESSION['email'] = $usuario->email;
 			$_SESSION['celular'] = $usuario->celular;
+			$_SESSION['isAdmin'] = $usuario->isAdmin;
 			$this->index();
 		} else {
 			$this->index();
