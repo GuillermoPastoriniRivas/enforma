@@ -13,7 +13,11 @@
                 <h6>Desde 1993</h6>
                 <h2>Cuidando tu <em>imagen</em></h2>
                 <div class="main-button scroll-to-section">
-                    <a href="#features">Inscribirse</a>
+                <?php if (isset($_SESSION['id_user'])):?>
+                                        <li><a href="<?=ROOT?>logout">Cerrar Sesión</a></li>
+                                    <?php else:?>
+                                        <li class="main-button"><a href="<?=ROOT?>signup">Ingresar</a></li>
+                                    <?php endif;?>
                 </div>
             </div>
         </div>
@@ -76,7 +80,11 @@
                         <h2>No <em>Lo</em> Pienses <em>Mas</em>, Inscribite <em>Ahora!</em>!</h2>
                         <p></p>
                         <div class="main-button scroll-to-section">
-                            <a href="#our-classes">Inscribirse</a>
+                            <?php if (isset($_SESSION['id_user'])):?>
+                                            <li><a href="<?=ROOT?>logout">Cerrar Sesión</a></li>
+                                        <?php else:?>
+                                            <li class="main-button"><a href="<?=ROOT?>signup">Ingresar</a></li>
+                                        <?php endif;?>
                         </div>
                     </div>
                 </div>
